@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CafeRPG"
-run/main_scene="uid://bodokar5axh1u"
+run/main_scene="uid://db03omccnb8bk"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://00_Globals/GlobalLevelManager.gd"
 GlobalPlayerManager="*res://00_Globals/GlobalPlayerManager.gd"
+SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
 
 [display]
 

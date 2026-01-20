@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://db03omccnb8bk"]
+[gd_scene load_steps=7 format=4 uid="uid://db03omccnb8bk"]
 
 [ext_resource type="Texture2D" uid="uid://d2uhqmm3c466m" path="res://Player/Sprites/SECONDBARISTA.png" id="1_5cr60"]
 [ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_i1foo"]
 [ext_resource type="PackedScene" uid="uid://ciopepvmttn4k" path="res://Levels/player_spawn.tscn" id="2_5p8lo"]
+[ext_resource type="PackedScene" uid="uid://bwg2rr8tgx1aa" path="res://Levels/level_transition.tscn" id="4_uoma6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p8lo"]
 texture = ExtResource("1_5cr60")
@@ -53,3 +54,9 @@ tile_set = SubResource("TileSet_i1foo")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_5p8lo")]
 position = Vector2(41, 42)
+
+[node name="LevelTransition" parent="." instance=ExtResource("4_uoma6")]
+position = Vector2(72, 64)
+level = "uid://bodokar5axh1u"
+size = 1
+side = 3
