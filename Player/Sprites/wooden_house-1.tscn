@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://c6kopkqmh1u75"]
+[gd_scene load_steps=9 format=4 uid="uid://c6kopkqmh1u75"]
 
 [ext_resource type="Texture2D" uid="uid://jylloumvnxg8" path="res://Player/Sprites/Wooden House-1.png (2).png" id="1_h75uj"]
 [ext_resource type="Texture2D" uid="uid://d2uhqmm3c466m" path="res://Player/Sprites/SECONDBARISTA.png" id="2_o2gpy"]
+[ext_resource type="Texture2D" uid="uid://7ouccowjqslb" path="res://Player/Sprites/UpdatedFurniture.png" id="2_u3trw"]
 [ext_resource type="Script" uid="uid://dmn6u5l6y0tvs" path="res://Player/Scripts/LevelTileMap.gd" id="3_0f73k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h75uj"]
@@ -50,6 +51,29 @@ texture = ExtResource("1_h75uj")
 5:4/0 = 0
 6:4/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jgy5"]
+texture = ExtResource("2_u3trw")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0f73k"]
 texture = ExtResource("2_o2gpy")
 1:0/0 = 0
@@ -97,6 +121,7 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_h75uj")
 sources/3 = SubResource("TileSetAtlasSource_0f73k")
+sources/1 = SubResource("TileSetAtlasSource_2jgy5")
 
 [node name="WoodenHouse1" type="TileMapLayer"]
 position = Vector2(18, -39)
