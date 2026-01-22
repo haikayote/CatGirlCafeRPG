@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 LevelManager="*res://00_Globals/GlobalLevelManager.gd"
 GlobalPlayerManager="*res://00_Globals/GlobalPlayerManager.gd"
 SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
+SaveManager="*res://00_Globals/GlobalSaveManager.gd"
 PauseMenu="*res://GUI/pause_menu/pause_menu.tscn"
 
 [display]
