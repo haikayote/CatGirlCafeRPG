@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://b34ixnmxg1u44"]
+[gd_scene load_steps=4 format=3 uid="uid://b34ixnmxg1u44"]
 
-[node name="Npc" type="Node2D"]
+[ext_resource type="Script" uid="uid://brixpvtegghto" path="res://npc/scripts/npc.gd" id="1_2xp5l"]
+[ext_resource type="Texture2D" uid="uid://8kjaihk4eit1" path="res://Player/Sprites/idlerpg.png" id="2_nhy3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i1kj"]
+size = Vector2(16, 8)
+
+[node name="Npc" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_2xp5l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(0, -15)
+texture = ExtResource("2_nhy3c")
+hframes = 26
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_3i1kj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

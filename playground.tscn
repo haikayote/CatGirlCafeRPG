@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=4 uid="uid://bodokar5axh1u"]
+[gd_scene load_steps=8 format=4 uid="uid://bodokar5axh1u"]
 
 [ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_m8u5f"]
 [ext_resource type="PackedScene" uid="uid://c6kopkqmh1u75" path="res://Player/Sprites/wooden_house-1.tscn" id="1_wt17y"]
 [ext_resource type="PackedScene" uid="uid://ciopepvmttn4k" path="res://Levels/player_spawn.tscn" id="2_wt17y"]
 [ext_resource type="PackedScene" uid="uid://bwg2rr8tgx1aa" path="res://Levels/level_transition.tscn" id="4_is3ju"]
+[ext_resource type="PackedScene" uid="uid://b34ixnmxg1u44" path="res://npc/npc.tscn" id="5_o00ia"]
+[ext_resource type="PackedScene" uid="uid://cs2asgjbtqjl1" path="res://npc/npc_behavior_wander.tscn" id="6_4bqqs"]
+[ext_resource type="Resource" uid="uid://c651468d8e653" path="res://npc/00_npcs/npc_01.tres" id="6_ynsuh"]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_m8u5f")
@@ -24,3 +27,9 @@ position = Vector2(153, -20)
 level = "uid://db03omccnb8bk"
 size = 1
 side = 2
+
+[node name="Npc" parent="." instance=ExtResource("5_o00ia")]
+position = Vector2(125, 17)
+npc_resource = ExtResource("6_ynsuh")
+
+[node name="NpcBehaviorWander" parent="Npc" instance=ExtResource("6_4bqqs")]
