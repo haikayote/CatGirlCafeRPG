@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://daxkqata0jx5j"]
+
+[ext_resource type="Script" uid="uid://ds8l015viv2ad" path="res://npc/scripts/patrol_location.gd" id="1_xdeq0"]
+
+[sub_resource type="Gradient" id="Gradient_rlkg0"]
+offsets = PackedFloat32Array(0.0472973, 0.6148649, 0.722973)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t7hfl"]
+gradient = SubResource("Gradient_rlkg0")
+width = 24
+height = 24
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="PatrolLocation" type="Node2D"]
+show_behind_parent = true
+script = ExtResource("1_xdeq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.5058824)
+texture = SubResource("GradientTexture2D_t7hfl")
+
+[node name="Line2D" type="Line2D" parent="Sprite2D"]
+points = PackedVector2Array(0, 0, 12, 0)
+width = 1.0
+default_color = Color(1, 1, 1, 0.4862745)
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 13.0
+offset_bottom = 15.0
+theme_override_colors/font_shadow_color = Color(0.11887898, 0.067320645, 0.08688726, 0.99607843)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 11
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Sprite2D"]
+offset_left = -21.0
+offset_top = 7.0
+offset_right = 23.0
+offset_bottom = 30.0
+theme_override_colors/font_shadow_color = Color(0.11887898, 0.067320645, 0.08688726, 0.99607843)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "wait: 0.0s"
+horizontal_alignment = 1

@@ -33,3 +33,4 @@ position = Vector2(125, 17)
 npc_resource = ExtResource("6_ynsuh")
 
 [node name="NpcBehaviorWander" parent="Npc" instance=ExtResource("6_4bqqs")]
+wander_range = 1
