@@ -15,6 +15,10 @@ func _ready() -> void:
 		child_order_changed.connect(gather_patrol_locations) 
 	pass
 	super()
+	if patrol_locations.size() == 0:
+		process_mode = Node.PROCESS_MODE_DISABLED
+		return
+	target = patrol_locations[0]
 	
 func gather_patrol_locations(_n : Node = null) -> void:
 	patrol_locations = []
@@ -26,4 +30,11 @@ func start() -> void:
 	if npc.do_behavior == false or patrol_locations.size() < 2:
 		return
 	#IDLE PHASE
+	npc.global_position = target.target_position
+	npc.state = "idle"
+	npc.velocity = Vector2.ZERO
+	npc.update_animation()
+	
+	var wait_time : float = target.wait_time
+	
 	pass
