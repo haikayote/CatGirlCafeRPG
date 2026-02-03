@@ -14,6 +14,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		child_entered_tree.connect(gather_patrol_locations) #everytime a child is added, call function
 		child_order_changed.connect(gather_patrol_locations) 
+		return
 	pass
 	super()
 	if patrol_locations.size() == 0:
@@ -38,11 +39,19 @@ func gather_patrol_locations(_n : Node = null) -> void:
 		if patrol_locations.size() > 0:
 			for i in patrol_locations.size():
 				var _p = patrol_locations[i] as PatrolLocation
-				if not transform_changed.is_connected(gather_patrol_locations):
-					_p.transform_changed.connect(gather_patrol_locations())
+				
+				if not _p.transform_changed.is_connected(gather_patrol_locations):
+					_p.transform_changed.connect(gather_patrol_locations)
+				
 				_p.update_label(str(i))
 				_p.modulate = _get_color_by_index(i)
 				
+				var _next : PatrolLocation
+				if i < patrol_locations.size() - 1:
+					_next = patrol_locations[i+1]
+				else:
+					_next = patrol_locations[0]
+				_p.update_line(_next.position)
 			
 	pass
 func start() -> void:

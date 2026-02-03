@@ -41,12 +41,22 @@ wander_range = 1
 position = Vector2(61, 14)
 
 [node name="NpcBehaviorPatrol" parent="Npc2" instance=ExtResource("8_pi42a")]
-process_mode = 4
 
 [node name="PatrolLocation" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
 modulate = Color(1, 0, 0, 1)
+position = Vector2(-7, 10)
 
 [node name="PatrolLocation2" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(17, -2)
+position = Vector2(13, 9)
+wait_time = 1.0
+
+[node name="PatrolLocation3" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(10, -9)
+wait_time = 1.0
+
+[node name="PatrolLocation4" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-8, -9)
 wait_time = 1.0
