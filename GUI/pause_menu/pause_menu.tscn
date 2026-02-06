@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxmdppjai3qa7"]
+[gd_scene load_steps=4 format=3 uid="uid://bxmdppjai3qa7"]
 
 [ext_resource type="Script" uid="uid://dew88osx7uqrd" path="res://GUI/pause_menu/pause_menu.gd" id="1_4w82k"]
+[ext_resource type="FontFile" uid="uid://dcxhhgadxnvat" path="res://imports/npc_and_dialog/fonts/Abaddon Bold.ttf" id="2_rsqrg"]
+[ext_resource type="FontFile" uid="uid://byp8pvjjh2xjx" path="res://imports/npc_and_dialog/fonts/Abaddon Light.ttf" id="3_36pfd"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -15,26 +17,29 @@ grow_vertical = 2
 color = Color(1, 0.7372549, 1, 0.74509805)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 205.00002
-offset_top = 117.0
-offset_right = 349.0
-offset_bottom = 183.0
-scale = Vector2(0.54286313, 0.52984154)
+offset_left = 134.00002
+offset_top = 93.0
+offset_right = 319.0
+offset_bottom = 171.0
+scale = Vector2(1.1569269, 1.1793921)
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_rsqrg")
 text = "** { Paused } **"
 
 [node name="Button_Save" type="Button" parent="VBoxContainer"]
 modulate = Color(1, 0.1254902, 1, 1)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_36pfd")
 text = "            Save            "
 
 [node name="Button_Load" type="Button" parent="VBoxContainer"]
 modulate = Color(1, 0, 1, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_36pfd")
 text = "Load"

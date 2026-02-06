@@ -4,6 +4,7 @@ class_name State_Walk extends State
 @onready var idle : State = $"../Idle"
 
 func _ready(): 
+	
 	pass
 #what happens when the player enters the state
 func Enter() -> void:
@@ -27,4 +28,8 @@ func Physics(_delta : float) -> State:
 	
 #what happens with input events in this state
 func HandleInput(_event : InputEvent) -> State:
+	if _event.is_action_pressed("interact"):
+		GlobalPlayerManager.interact_pressed.emit()
+		print("interact pressed WALK")
+	
 	return null

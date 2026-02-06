@@ -2,8 +2,11 @@ extends Node
 
 const PLAYER = preload("res://player.tscn")
 
+signal interact_pressed
+
 var player : Player
 var player_spawned : bool = false
+
 
 func _ready() -> void:
 	add_player_instance()

@@ -24,4 +24,9 @@ func Physics(_delta : float) -> State:
 	
 #what happens with input events in this state
 func HandleInput(_event : InputEvent) -> State:
+	if _event.is_action_pressed("interact"):
+		GlobalPlayerManager.interact_pressed.emit()
+		print("interact pressed IDLE")
+	
 	return null
+	

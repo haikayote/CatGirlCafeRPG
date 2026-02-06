@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8vl1gn0310x6"]
+[gd_scene load_steps=17 format=3 uid="uid://c8vl1gn0310x6"]
 
 [ext_resource type="Script" uid="uid://psdqww288i4f" path="res://Player/Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://8kjaihk4eit1" path="res://Player/Sprites/idlerpg.png" id="2_onrkg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://1yw2obr0a0uy" path="res://Player/Scripts/state_idle.gd" id="4_hqtel"]
 [ext_resource type="Script" uid="uid://bwwblsfphwt0j" path="res://Player/Scripts/state_walk.gd" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://ck46sm65ohir4" path="res://Player/Scripts/PlayerCamera.gd" id="6_2hs0m"]
+[ext_resource type="Script" uid="uid://c1lj1le1s07kn" path="res://Player/Scripts/interactions.gd" id="7_1jxqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
 size = Vector2(10, 5)
@@ -168,3 +169,6 @@ script = ExtResource("5_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("6_2hs0m")
+
+[node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("7_1jxqw")

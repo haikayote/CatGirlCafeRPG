@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bodokar5axh1u"]
+[gd_scene load_steps=13 format=4 uid="uid://bodokar5axh1u"]
 
 [ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_m8u5f"]
 [ext_resource type="PackedScene" uid="uid://c6kopkqmh1u75" path="res://Player/Sprites/wooden_house-1.tscn" id="1_wt17y"]
@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://b34ixnmxg1u44" path="res://npc/npc.tscn" id="5_o00ia"]
 [ext_resource type="PackedScene" uid="uid://cs2asgjbtqjl1" path="res://npc/npc_behavior_wander.tscn" id="6_4bqqs"]
 [ext_resource type="Resource" uid="uid://c651468d8e653" path="res://npc/00_npcs/npc_01.tres" id="6_ynsuh"]
+[ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="8_h1jm5"]
 [ext_resource type="PackedScene" uid="uid://1p38oaxpvfg" path="res://npc/npc_behavior_patrol.tscn" id="8_pi42a"]
 [ext_resource type="PackedScene" uid="uid://daxkqata0jx5j" path="res://npc/patrol_location.tscn" id="9_h1jm5"]
+[ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/dialog_text.gd" id="9_te8jg"]
+[ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="10_yjl7g"]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_m8u5f")
@@ -37,6 +40,27 @@ npc_resource = ExtResource("6_ynsuh")
 [node name="NpcBehaviorWander" parent="Npc" instance=ExtResource("6_4bqqs")]
 wander_range = 1
 
+[node name="DialogInteraction" parent="Npc" instance=ExtResource("8_h1jm5")]
+process_mode = 3
+
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction"]
+script = ExtResource("9_te8jg")
+text = "[wave]HELLO![/wave]"
+npc_info = ExtResource("10_yjl7g")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="Npc/DialogInteraction"]
+script = ExtResource("9_te8jg")
+text = "what's this diddy blud doing on the calculator"
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="Npc/DialogInteraction"]
+script = ExtResource("9_te8jg")
+text = "gyatt"
+npc_info = ExtResource("10_yjl7g")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
 [node name="Npc2" parent="." instance=ExtResource("5_o00ia")]
 position = Vector2(61, 14)
 
@@ -44,7 +68,7 @@ position = Vector2(61, 14)
 
 [node name="PatrolLocation" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(-7, 10)
+position = Vector2(-24, 21)
 
 [node name="PatrolLocation2" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
 modulate = Color(1, 1, 0, 1)
