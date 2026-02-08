@@ -26,6 +26,7 @@ func _ready() -> void:
 
 func player_interact() -> void:
 	player_interacted.emit()
+	DialogSystem.show_dialog()
 	
 	pass
 func _on_area_enter(_a : Node2D) -> void:
@@ -37,6 +38,7 @@ func _on_area_enter(_a : Node2D) -> void:
 func _on_area_exit(_a: Node2D) -> void:
 	print("player exited!!")
 	animation_player.play("hide")
+	GlobalPlayerManager.interact_pressed.disconnect(player_interact)
 	pass
 	
 	
