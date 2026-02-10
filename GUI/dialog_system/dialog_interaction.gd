@@ -18,15 +18,20 @@ func _ready() -> void:
 	enabled = true
 	body_entered.connect(_on_area_enter)
 	body_exited.connect(_on_area_exit)
-	
-	for c in dialog_items:
+	dialog_items = []
+	for c in get_children():
 		if c is DialogItem:
 			dialog_items.append(c)
+	print("Dialog items collected: ", dialog_items.size())
+	
 	pass
 
 func player_interact() -> void:
 	player_interacted.emit()
-	DialogSystem.show_dialog()
+	await get_tree().process_frame
+	await get_tree().process_frame #updates animation
+	DialogSystem.show_dialog(dialog_items)
+	DialogSystem.finished.connect(_on_dialog_finished)
 	
 	pass
 func _on_area_enter(_a : Node2D) -> void:
@@ -41,7 +46,10 @@ func _on_area_exit(_a: Node2D) -> void:
 	GlobalPlayerManager.interact_pressed.disconnect(player_interact)
 	pass
 	
-	
+func _on_dialog_finished() -> void:
+	DialogSystem.finished.disconnect(_on_dialog_finished)
+	finished.emit()
+	pass	
 func _get_configuration_warnings() -> PackedStringArray:
 	
 	#check for dialog

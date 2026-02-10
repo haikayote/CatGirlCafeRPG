@@ -123,6 +123,7 @@ _data = {
 }
 
 [node name="DialogInteraction" type="Area2D"]
+process_mode = 3
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_hu75p")
