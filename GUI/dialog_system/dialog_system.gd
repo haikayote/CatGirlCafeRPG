@@ -105,6 +105,13 @@ func show_dialog_button_indicator(_is_visible : bool) -> void:
 func start_timer() -> void:
 	timer.wait_time = text_speed
 	#manipulate wait_time
+	var _char = plain_text[content.visible_characters - 1]
+	if '.?!:;'.contains(_char):
+		timer.wait_time *= 4 #pauses for punctuation
+	elif ', '.contains(_char):
+		timer.wait_time *= 2
+		
+		
 	timer.start()#everytime timer runs out, add another letter
 	pass
 	

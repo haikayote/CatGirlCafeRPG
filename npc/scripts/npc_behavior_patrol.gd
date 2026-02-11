@@ -3,10 +3,15 @@ extends NPCBehavior
 
 const COLORS = [Color(1,0,0), Color(1,1,0), Color(0,1,0), Color(0,1,1), Color(0,0,1), Color(1,0,1)]
 @export var walk_speed : float = 30.0
+@onready var timer: Timer = $Timer
 
 var patrol_locations : Array[PatrolLocation]
 var current_location_index : int = 0
 var target : PatrolLocation
+
+var has_started : bool = false
+var last_phase : String = ""
+var direction : Vector2 
 
 
 func _ready() -> void:
@@ -22,18 +27,19 @@ func _ready() -> void:
 		return
 	target = patrol_locations[0]
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	#check how close npc is to target position
 	if npc.global_position.distance_to(target.target_position) < 1:
-		start() #restarts behavior
+		idle_phase() #restarts behavior
 		
 func gather_patrol_locations(_n : Node = null) -> void:
 	patrol_locations = []
 	for c in get_children():
 		if c is PatrolLocation:
 			patrol_locations.append(c)
+			print("patrol_locations")
 			
 	if Engine.is_editor_hint():
 		if patrol_locations.size() > 0:
@@ -57,6 +63,17 @@ func gather_patrol_locations(_n : Node = null) -> void:
 func start() -> void:
 	if npc.do_behavior == false or patrol_locations.size() < 2:
 		return
+	if has_started == true:
+		if timer.time_left == 0:
+			walk_phase()
+		return
+			
+	has_started = true
+
+   
+	pass
+	
+func idle_phase() -> void:
 	#IDLE PHASE
 	npc.global_position = target.target_position
 	npc.state = "idle"
@@ -68,25 +85,29 @@ func start() -> void:
 	if current_location_index >= patrol_locations.size():
 		current_location_index = 0
 	target = patrol_locations[current_location_index]
+	if wait_time > 0:
+		timer.start(wait_time)
+		await timer.timeout
 	
-	await get_tree().create_timer(wait_time).timeout
 	
 	if npc.do_behavior == false:
 		return
+	walk_phase()
+	pass	
 	
+func walk_phase() -> void:
+		
 	#walk phase
 	
 	npc.state = "walk"
 	
-	var _dir = global_position.direction_to(target.target_position)
-	npc.direction = _dir
-	npc.velocity = walk_speed * _dir
+	direction = global_position.direction_to(target.target_position)
+	npc.direction = direction
+	npc.velocity = walk_speed * direction
 	npc.update_direction(target.target_position)
 	npc.update_animation()
 
-   
 	pass
-	
 func _get_color_by_index(i: int) -> Color:
 	var color_count : int = COLORS.size()
 	while i > color_count - 1:
