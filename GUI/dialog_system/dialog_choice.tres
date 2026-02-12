@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ce87blbeikrty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vdi"]
+bg_color = Color(0, 0, 0, 0.22600001)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 3.0
+expand_margin_right = 5.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eecbu"]
+bg_color = Color(0, 0, 0, 0.757)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 3.0
+expand_margin_right = 5.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upnhc"]
+bg_color = Color(0, 0, 0, 0.88400006)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 3.0
+expand_margin_right = 5.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4fci"]
+bg_color = Color(0, 0, 0, 0.453)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 3.0
+expand_margin_right = 5.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7arbs"]
+bg_color = Color(0, 0, 0, 0.757)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 3.0
+expand_margin_right = 5.0
+anti_aliasing = false
+
+[resource]
+Button/colors/font_color = Color(0.89411765, 0.8627451, 0.79607844, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_p8vdi")
+Button/styles/focus = SubResource("StyleBoxFlat_eecbu")
+Button/styles/hover = SubResource("StyleBoxFlat_upnhc")
+Button/styles/normal = SubResource("StyleBoxFlat_r4fci")
+Button/styles/pressed = SubResource("StyleBoxFlat_7arbs")
+VBoxContainer/constants/separation = 6

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="8_h1jm5"]
 [ext_resource type="PackedScene" uid="uid://1p38oaxpvfg" path="res://npc/npc_behavior_patrol.tscn" id="8_pi42a"]
 [ext_resource type="PackedScene" uid="uid://daxkqata0jx5j" path="res://npc/patrol_location.tscn" id="9_h1jm5"]
-[ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/dialog_text.gd" id="9_te8jg"]
+[ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="9_te8jg"]
 [ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="10_yjl7g"]
 
 [node name="Playground" type="Node2D"]

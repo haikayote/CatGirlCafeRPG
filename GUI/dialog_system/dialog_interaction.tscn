@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bgkpm6i8uerqo"]
 
-[ext_resource type="Script" uid="uid://3rxf2mylikmj" path="res://GUI/dialog_system/dialog_interaction.gd" id="1_hu75p"]
+[ext_resource type="Script" uid="uid://3rxf2mylikmj" path="res://GUI/dialog_system/scripts/dialog_interaction.gd" id="1_hu75p"]
 [ext_resource type="Texture2D" uid="uid://yo5hhn1m6nye" path="res://imports/npc_and_dialog/sprites/dialog_interactable.png" id="2_r5oai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqf3j"]
