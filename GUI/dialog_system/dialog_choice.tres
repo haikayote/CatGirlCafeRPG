@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ce87blbeikrty"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ce87blbeikrty"]
+
+[ext_resource type="FontFile" uid="uid://byp8pvjjh2xjx" path="res://imports/npc_and_dialog/fonts/Abaddon Light.ttf" id="1_eecbu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vdi"]
 bg_color = Color(0, 0, 0, 0.22600001)
@@ -57,6 +59,8 @@ anti_aliasing = false
 
 [resource]
 Button/colors/font_color = Color(0.89411765, 0.8627451, 0.79607844, 1)
+Button/constants/h_separation = 4
+Button/fonts/font = ExtResource("1_eecbu")
 Button/styles/disabled = SubResource("StyleBoxFlat_p8vdi")
 Button/styles/focus = SubResource("StyleBoxFlat_eecbu")
 Button/styles/hover = SubResource("StyleBoxFlat_upnhc")
