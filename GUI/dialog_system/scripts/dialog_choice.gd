@@ -5,11 +5,25 @@ class_name DialogChoice extends DialogItem
 var dialog_branches : Array[DialogBranch] = []
 
 func _ready() -> void:
+	super()
 	dialog_branches = []
 	for c in get_children():
 		if c is DialogBranch:
 			dialog_branches.append(c)
 	print("DialogChoice branches collected:", dialog_branches.size())	
+
+func _set_editor_display() -> void:
+	#Set text after related dialogtext node
+	#set dialog choice buttons
+	if dialog_branches.size() < 2:
+		return
+	example_dialog.set_dialog_choice(self)
+	pass
+
+func set_related_text() -> void:
+	#find the sibling
+	var _p = get_parent()
+	#set text based off of sibling
 func _get_configuration_warnings() -> PackedStringArray:
 	if _check_for_dialog_branches() == false:
 		return ["Requires at least two DialogBranch nodes!"]
