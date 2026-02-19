@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+imports/npc_and_dialog/sprites/portraits/arduino-ide_2.3.7_Windows_64bit.exe
