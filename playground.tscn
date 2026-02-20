@@ -70,6 +70,7 @@ metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("9_te8jg")
+text = "Placeholder text BOMBOCLAT"
 npc_info = ExtResource("6_ynsuh")
 metadata/_custom_type_script = "uid://785rj1abomch"
 

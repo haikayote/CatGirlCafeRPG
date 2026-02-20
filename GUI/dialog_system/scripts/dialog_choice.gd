@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _set_editor_display() -> void:
 	#Set text after related dialogtext node
+	set_related_text()
 	#set dialog choice buttons
 	if dialog_branches.size() < 2:
 		return
@@ -23,7 +24,12 @@ func _set_editor_display() -> void:
 func set_related_text() -> void:
 	#find the sibling
 	var _p = get_parent()
+	var _t = _p.get_child(self.get_index() - 1)
 	#set text based off of sibling
+	if _t is DialogText:
+		example_dialog.set_dialog_text(_t)
+		example_dialog.content.visible_characters = -1 #shows all characters
+		
 func _get_configuration_warnings() -> PackedStringArray:
 	if _check_for_dialog_branches() == false:
 		return ["Requires at least two DialogBranch nodes!"]

@@ -96,7 +96,7 @@ func set_dialog_text(_d : DialogText) -> void:
 	name_label.text = _d.npc_info.npc_name
 	portrait_sprite.texture = _d.npc_info.portrait
 	portrait_sprite.audio_pitch_base = _d.npc_info.dialog_audio_pitch
-	
+	choice_options.visible = false
 	content.visible_characters = 0
 	text_length = content.get_total_character_count()
 	plain_text = content.get_parsed_text()
@@ -116,6 +116,8 @@ func set_dialog_choice(_d: DialogChoice) -> void:
 		_new_choice.text = _d.dialog_branches[i].text
 		_new_choice.pressed.connect(_dialog_choice_selected.bind(_d.dialog_branches[i]))
 		_new_choice.theme = preload("res://GUI/dialog_system/dialog_choice.tres")
+	if Engine.is_editor_hint():
+		return
 	await get_tree().process_frame #wait one tick
 	choice_options.get_child(0).grab_focus()
 
