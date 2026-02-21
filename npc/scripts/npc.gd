@@ -43,7 +43,7 @@ func _on_interaction_finished() -> void:
 	update_animation()
 	do_behavior = true
 	do_behavior_enabled.emit()
-	
+	queue_free()
 	
 	
 	pass

@@ -13,5 +13,6 @@ func _ready() -> void:
 func add_npc_instance() -> void:
 	npc = npc_01.instantiate()
 	add_child(npc)
+	
 func set_npc_position(_new_pos : Vector2) -> void:
 	npc.global_position = _new_pos
