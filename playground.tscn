@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bodokar5axh1u"]
+[gd_scene load_steps=17 format=4 uid="uid://bodokar5axh1u"]
 
 [ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_m8u5f"]
 [ext_resource type="PackedScene" uid="uid://c6kopkqmh1u75" path="res://Player/Sprites/wooden_house-1.tscn" id="1_wt17y"]
@@ -14,6 +14,8 @@
 [ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="10_yjl7g"]
 [ext_resource type="Script" uid="uid://bu72pcrg4ws6q" path="res://GUI/dialog_system/scripts/dialog_choice.gd" id="11_f7pug"]
 [ext_resource type="Script" uid="uid://dhh7suegfpi4q" path="res://GUI/dialog_system/scripts/dialog_branch.gd" id="12_jgc46"]
+[ext_resource type="PackedScene" uid="uid://do7dyaxkjhyhm" path="res://Levels/npc_transition.tscn" id="13_dk0co"]
+[ext_resource type="PackedScene" uid="uid://fpv6io6nfu42" path="res://npc/npc_scenes/npc_01.tscn" id="14_dk0co"]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_m8u5f")
@@ -28,6 +30,9 @@ tile_map_data = PackedByteArray("AAABAAEAAQAFAAQAAAACAAEAAAABAAQAAAADAAEAAQAFAAQ
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_wt17y")]
 position = Vector2(97, 32)
+
+[node name="NpcTransition" parent="." instance=ExtResource("13_dk0co")]
+position = Vector2(168, -12)
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_is3ju")]
 position = Vector2(153, -20)
@@ -46,8 +51,14 @@ wander_range = 1
 
 [node name="DialogText" type="Node" parent="Npc/DialogInteraction"]
 script = ExtResource("9_te8jg")
-text = "[wave]HELLO![/wave]"
+text = "[wave]Hello![/wave] How may I help you?"
 npc_info = ExtResource("10_yjl7g")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="Npc/DialogInteraction"]
+script = ExtResource("9_te8jg")
+text = "Give me something..."
+npc_info = ExtResource("6_ynsuh")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogChoice" type="Node" parent="Npc/DialogInteraction"]
@@ -63,14 +74,37 @@ metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
 [node name="DialogText" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("9_te8jg")
-text = "bomboclat
+text = "It tastes like a dream.
 "
 npc_info = ExtResource("6_ynsuh")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
-[node name="DialogText2" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch"]
+[node name="DialogChoice" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_f7pug")
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
+
+[node name="DialogBranch" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("12_jgc46")
+text = "You accept the praise."
+npc_info = ExtResource("10_yjl7g")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch"]
 script = ExtResource("9_te8jg")
-text = "Placeholder text BOMBOCLAT"
+text = "Why are you still.. standing there?"
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogBranch2" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("12_jgc46")
+text = "You feel uncertain."
+npc_info = ExtResource("10_yjl7g")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("9_te8jg")
+text = "Can I go now?"
 npc_info = ExtResource("6_ynsuh")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -80,14 +114,56 @@ text = "Savory."
 npc_info = ExtResource("6_ynsuh")
 metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
-[node name="Npc2" parent="." instance=ExtResource("5_o00ia")]
-position = Vector2(61, 5)
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("9_te8jg")
+text = "Thank you for the experience."
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://785rj1abomch"
 
-[node name="NpcBehaviorPatrol" parent="Npc2" instance=ExtResource("8_pi42a")]
+[node name="DialogText2" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("9_te8jg")
+text = "Can I tell you something?"
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://785rj1abomch"
 
-[node name="PatrolLocation" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
+[node name="DialogChoice" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("11_f7pug")
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
+
+[node name="DialogBranch" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("12_jgc46")
+text = "Yes"
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("9_te8jg")
+text = "When I was young, freedom tasted like a breath of fresh air. Now it tastes like this.. [wave] flavor.. [/wave]"
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogBranch2" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("12_jgc46")
+text = "Nod"
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("9_te8jg")
+text = "Quite frankly, I don't care. However, neither should you."
+npc_info = ExtResource("6_ynsuh")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="npc_01" parent="." instance=ExtResource("14_dk0co")]
+position = Vector2(55.71084, 24.46735)
+
+[node name="NpcBehaviorPatrol2" parent="npc_01" instance=ExtResource("8_pi42a")]
+
+[node name="PatrolLocation2" parent="npc_01/NpcBehaviorPatrol2" instance=ExtResource("9_h1jm5")]
 modulate = Color(1, 0, 0, 1)
+position = Vector2(115.28916, -35.46735)
 
-[node name="PatrolLocation2" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_h1jm5")]
+[node name="PatrolLocation" parent="npc_01/NpcBehaviorPatrol2" instance=ExtResource("9_h1jm5")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(25, 0)
+position = Vector2(61.28916, -34.46735)

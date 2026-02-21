@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://fkw58q4j8oo"]
+
+[ext_resource type="Script" uid="uid://bqphon5fgq5m6" path="res://Levels/scripts/npc_spawn.gd" id="1_kbjfd"]
+[ext_resource type="Texture2D" uid="uid://dkpd2yrl1tvjr" path="res://npc/sprites/npc_sprite_01.png" id="2_d6lqd"]
+
+[node name="NPCSpawn" type="Node2D"]
+script = ExtResource("1_kbjfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.1718916, 0.97035426, 0.50575507, 0.57254905)
+position = Vector2(0, -11)
+texture = ExtResource("2_d6lqd")
+hframes = 26

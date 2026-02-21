@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://do7dyaxkjhyhm"]
+
+[ext_resource type="Script" uid="uid://cwqdop8kic52b" path="res://Levels/scripts/npc_transition.gd" id="1_ikisp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seb75"]
+
+[node name="NpcTransition" type="Area2D"]
+script = ExtResource("1_ikisp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_seb75")
