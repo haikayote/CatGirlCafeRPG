@@ -2,6 +2,7 @@
 class_name NPC extends CharacterBody2D
 
 signal do_behavior_enabled
+signal interaction_finished
 
 var state : String = "idle"
 var direction : Vector2 = Vector2.DOWN
@@ -43,7 +44,7 @@ func _on_interaction_finished() -> void:
 	update_animation()
 	do_behavior = true
 	do_behavior_enabled.emit()
-	queue_free()
+	interaction_finished.emit()
 	
 	
 	pass

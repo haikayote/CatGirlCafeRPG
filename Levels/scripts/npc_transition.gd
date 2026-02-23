@@ -5,14 +5,23 @@ var npc:NPC
 var npc_spawned : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_npc_instance()
-	await get_tree().create_timer(0.2).timeout
-	npc_spawned = true
-	set_npc_position(global_position)
+	spawn_npc()
 
-func add_npc_instance() -> void:
+func spawn_npc() -> void:
+	if npc_spawned:
+		return
+		
 	npc = npc_01.instantiate()
 	add_child(npc)
+	npc.global_position = global_position
 	
-func set_npc_position(_new_pos : Vector2) -> void:
-	npc.global_position = _new_pos
+	npc.interaction_finished.connect(_on_npc_finished)  #connect signal
+	
+	npc_spawned = true
+	
+func _on_npc_finished() -> void:
+	npc.queue_free()
+	npc_spawned = false
+	
+	await get_tree().create_timer(0.5).timeout
+	spawn_npc()

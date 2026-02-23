@@ -1,12 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://fpv6io6nfu42"]
+[gd_scene load_steps=20 format=3 uid="uid://fpv6io6nfu42"]
 
 [ext_resource type="Script" uid="uid://brixpvtegghto" path="res://npc/scripts/npc.gd" id="1_jy3m2"]
 [ext_resource type="Texture2D" uid="uid://dkpd2yrl1tvjr" path="res://npc/sprites/npc_sprite_01.png" id="2_2qx4x"]
 [ext_resource type="PackedScene" uid="uid://1p38oaxpvfg" path="res://npc/npc_behavior_patrol.tscn" id="3_0xspv"]
 [ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="4_5x8v0"]
+[ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="5_pw4aa"]
 [ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="5_rmorr"]
 [ext_resource type="Resource" uid="uid://c651468d8e653" path="res://npc/00_npcs/npc_01.tres" id="6_5w8oq"]
+[ext_resource type="Script" uid="uid://bu72pcrg4ws6q" path="res://GUI/dialog_system/scripts/dialog_choice.gd" id="6_r6otu"]
 [ext_resource type="PackedScene" uid="uid://daxkqata0jx5j" path="res://npc/patrol_location.tscn" id="7_rmorr"]
+[ext_resource type="Script" uid="uid://dhh7suegfpi4q" path="res://GUI/dialog_system/scripts/dialog_branch.gd" id="7_vfdyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3i1kj"]
 size = Vector2(16, 8)
@@ -164,22 +167,161 @@ libraries = {
 
 [node name="DialogText" type="Node" parent="DialogInteraction"]
 script = ExtResource("5_rmorr")
-text = "such a chud"
+text = "[wave]Hello![/wave] How may I help you? "
+npc_info = ExtResource("5_pw4aa")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction"]
+script = ExtResource("5_rmorr")
+text = "Hello, can I have something..."
 npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogChoice" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_r6otu")
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
+
+[node name="DialogBranch" type="Node" parent="DialogInteraction/DialogChoice"]
+script = ExtResource("7_vfdyw")
+text = "that keeps me awake?"
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("5_rmorr")
+text = "I’ve been tired all day."
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("5_rmorr")
+text = " If I fall asleep now, tomorrow will come too fast."
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("5_rmorr")
+text = "I’m afraid of what it has to bring."
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("5_rmorr")
+text = "Coming right up. "
+npc_info = ExtResource("5_pw4aa")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("5_rmorr")
+text = "They drink it quickly. 
+
+"
+npc_info = ExtResource("5_pw4aa")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("5_rmorr")
+text = "They don’t look at you when they leave. 
+
+"
+npc_info = ExtResource("5_pw4aa")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogBranch2" type="Node" parent="DialogInteraction/DialogChoice"]
+script = ExtResource("7_vfdyw")
+text = "that feels like home?"
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = "I don’t remember what home tastes like."
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = " I think it would taste warm, maybe sweet.  "
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = "Please help me remember. This is all I need to feel okay. "
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = "I'll try. "
+npc_info = ExtResource("5_pw4aa")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = "They drink it slowly, savoring every drop. "
+npc_info = ExtResource("5_pw4aa")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = "My mother used to make me something like this when I was younger. "
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText7" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = "Without her, I float through the world without an anchor. "
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText8" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("5_rmorr")
+text = "Thank you for the experience. "
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogBranch3" type="Node" parent="DialogInteraction/DialogChoice"]
+script = ExtResource("7_vfdyw")
+text = "that doesn't matter?"
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
+script = ExtResource("5_rmorr")
+text = "Anything is fine. "
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
+script = ExtResource("5_rmorr")
+text = "It all tastes the same anyway. "
+npc_info = ExtResource("6_5w8oq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
+script = ExtResource("5_rmorr")
+text = "Okay. "
+npc_info = ExtResource("5_pw4aa")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
+script = ExtResource("5_rmorr")
+text = "They leave half of it on the counter. "
+npc_info = ExtResource("5_pw4aa")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="NpcBehaviorPatrol" parent="." instance=ExtResource("3_0xspv")]
 
 [node name="PatrolLocation" parent="NpcBehaviorPatrol" instance=ExtResource("7_rmorr")]
 modulate = Color(1, 0, 0, 1)
-wait_time = 5.0
-
-[node name="PatrolLocation2" parent="NpcBehaviorPatrol" instance=ExtResource("7_rmorr")]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(-36, 0)
-wait_time = 4.0
 
 [node name="PatrolLocation3" parent="NpcBehaviorPatrol" instance=ExtResource("7_rmorr")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-43, 1)
+
+[node name="PatrolLocation2" parent="NpcBehaviorPatrol" instance=ExtResource("7_rmorr")]
 modulate = Color(0, 1, 0, 1)
-position = Vector2(-18, 30)
-wait_time = 5.0
+position = Vector2(-80, 19)
+wait_time = 999.0

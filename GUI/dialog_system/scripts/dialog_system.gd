@@ -119,7 +119,7 @@ func set_dialog_choice(_d: DialogChoice) -> void:
 	if Engine.is_editor_hint():
 		return
 	await get_tree().process_frame #wait one tick
-	choice_options.get_child(0).grab_focus()
+	#choice_options.get_child(0).grab_focus()
 
 	
 	
