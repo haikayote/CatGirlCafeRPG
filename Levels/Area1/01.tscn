@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://db03omccnb8bk"]
+[gd_scene load_steps=16 format=4 uid="uid://db03omccnb8bk"]
 
 [ext_resource type="Texture2D" uid="uid://d2uhqmm3c466m" path="res://Player/Sprites/SECONDBARISTA.png" id="1_5cr60"]
 [ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_i1foo"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="7_1vyir"]
 [ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="8_jx7to"]
 [ext_resource type="Resource" uid="uid://wlowqr6vu3qb" path="res://npc/00_npcs/narrator.tres" id="9_1vyir"]
-[ext_resource type="PackedScene" uid="uid://dleovpwigkvjj" path="res://npc/npc_scenes/npc_02.tscn" id="10_jx7to"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p8lo"]
 texture = ExtResource("1_5cr60")
@@ -188,6 +187,3 @@ script = ExtResource("8_jx7to")
 text = "You're not ready to pick up the phone."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="npc_02" parent="DeskText" instance=ExtResource("10_jx7to")]
-position = Vector2(65, 37)

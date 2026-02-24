@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://c5wuqg85ejro2"]
+
+[ext_resource type="Texture2D" uid="uid://couyfy4n67xwf" path="res://imports/npc_and_dialog/sprites/portraits/npc_03_portrait.png" id="1_61vjh"]
+[ext_resource type="Script" uid="uid://c3ikk0qggwl7u" path="res://npc/scripts/npc_resource.gd" id="2_8qyde"]
+[ext_resource type="Texture2D" uid="uid://bu8aa0dcibm6" path="res://npc/sprites/npc_sprite_03.png" id="3_8qyde"]
+
+[resource]
+script = ExtResource("2_8qyde")
+npc_name = "Customer"
+sprite = ExtResource("3_8qyde")
+portrait = ExtResource("1_61vjh")
+metadata/_custom_type_script = "uid://c3ikk0qggwl7u"

@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci4y2th8pvq6m"]
+
+[ext_resource type="Texture2D" uid="uid://cq2anj5vec2xb" path="res://imports/npc_and_dialog/sprites/text-bubble.png" id="1_vf5sb"]
+[ext_resource type="FontFile" uid="uid://byp8pvjjh2xjx" path="res://imports/npc_and_dialog/fonts/Abaddon Light.ttf" id="2_rnivp"]
+[ext_resource type="FontFile" uid="uid://dcxhhgadxnvat" path="res://imports/npc_and_dialog/fonts/Abaddon Bold.ttf" id="3_jv0mq"]
+[ext_resource type="Theme" uid="uid://ce87blbeikrty" path="res://GUI/dialog_system/dialog_choice.tres" id="4_rnivp"]
+
+[sub_resource type="Gradient" id="Gradient_vyuf5"]
+colors = PackedColorArray(0, 0, 0, 0.8392157, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kndgs"]
+gradient = SubResource("Gradient_vyuf5")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ftvg"]
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_vf5sb")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="Day1Ending" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_kndgs")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -467.0
+offset_top = -86.0
+offset_right = -7.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7ftvg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.4392157, 0.39607844, 0.32156864, 1)
+theme_override_fonts/normal_font = ExtResource("2_rnivp")
+theme_override_fonts/bold_font = ExtResource("3_jv0mq")
+bbcode_enabled = true
+text = "It's time to pack up for the day...
+"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -46.5
+offset_right = 131.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_rnivp")
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rnivp")
+text = "Close up shop and return to your room."
