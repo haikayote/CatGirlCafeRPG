@@ -1,0 +1,214 @@
+[gd_scene load_steps=20 format=3 uid="uid://dckxuhrs5py5w"]
+
+[ext_resource type="Script" uid="uid://brixpvtegghto" path="res://npc/scripts/npc.gd" id="1_lu6nk"]
+[ext_resource type="Texture2D" uid="uid://dkpd2yrl1tvjr" path="res://npc/sprites/npc_sprite_01.png" id="2_8k6ui"]
+[ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="3_epc6e"]
+[ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="4_uldjw"]
+[ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="5_l5ohk"]
+[ext_resource type="Resource" uid="uid://c651468d8e653" path="res://npc/00_npcs/npc_01.tres" id="6_8ytgm"]
+[ext_resource type="Script" uid="uid://bu72pcrg4ws6q" path="res://GUI/dialog_system/scripts/dialog_choice.gd" id="7_yt6c7"]
+[ext_resource type="Script" uid="uid://dhh7suegfpi4q" path="res://GUI/dialog_system/scripts/dialog_branch.gd" id="8_5rv8t"]
+[ext_resource type="PackedScene" uid="uid://1p38oaxpvfg" path="res://npc/npc_behavior_patrol.tscn" id="10_1mhfd"]
+[ext_resource type="PackedScene" uid="uid://daxkqata0jx5j" path="res://npc/patrol_location.tscn" id="11_lvr2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i1kj"]
+size = Vector2(16, 8)
+
+[sub_resource type="Animation" id="Animation_3i1kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nhy3c"]
+resource_name = "idle_down"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ldo70"]
+resource_name = "idle_side"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_o6cys"]
+resource_name = "idle_up"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_fnhme"]
+resource_name = "walk_down"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_ocili"]
+resource_name = "walk_side"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [22, 23, 24, 25]
+}
+
+[sub_resource type="Animation" id="Animation_uamtn"]
+resource_name = "walk_up"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [17, 18, 19, 20]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_phifv"]
+_data = {
+&"RESET": SubResource("Animation_3i1kj"),
+&"idle_down": SubResource("Animation_nhy3c"),
+&"idle_side": SubResource("Animation_ldo70"),
+&"idle_up": SubResource("Animation_o6cys"),
+&"walk_down": SubResource("Animation_fnhme"),
+&"walk_side": SubResource("Animation_ocili"),
+&"walk_up": SubResource("Animation_uamtn")
+}
+
+[node name="npc_01" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_lu6nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -15)
+texture = ExtResource("2_8k6ui")
+hframes = 26
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_3i1kj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_phifv")
+}
+
+[node name="DialogInteraction" parent="." instance=ExtResource("3_epc6e")]
+
+[node name="DialogText" type="Node" parent="DialogInteraction"]
+script = ExtResource("4_uldjw")
+text = "What would you like?"
+npc_info = ExtResource("5_l5ohk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction"]
+script = ExtResource("4_uldjw")
+text = "I need something to wake me up... what do you recommend?"
+npc_info = ExtResource("6_8ytgm")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogChoice" type="Node" parent="DialogInteraction"]
+script = ExtResource("7_yt6c7")
+metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
+
+[node name="DialogBranch" type="Node" parent="DialogInteraction/DialogChoice"]
+script = ExtResource("8_5rv8t")
+text = "A double shot of espresso."
+npc_info = ExtResource("5_l5ohk")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogBranch2" type="Node" parent="DialogInteraction/DialogChoice"]
+script = ExtResource("8_5rv8t")
+text = "A generic brand energy drink."
+npc_info = ExtResource("5_l5ohk")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogBranch3" type="Node" parent="DialogInteraction/DialogChoice"]
+script = ExtResource("8_5rv8t")
+text = "A lobotomy."
+npc_info = ExtResource("5_l5ohk")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="NpcBehaviorPatrol" parent="." instance=ExtResource("10_1mhfd")]
+
+[node name="PatrolLocation" parent="NpcBehaviorPatrol" instance=ExtResource("11_lvr2r")]
+modulate = Color(1, 0, 0, 1)
+
+[node name="PatrolLocation3" parent="NpcBehaviorPatrol" instance=ExtResource("11_lvr2r")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-43, 1)
+
+[node name="PatrolLocation2" parent="NpcBehaviorPatrol" instance=ExtResource("11_lvr2r")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-80, 19)
+wait_time = 999.0

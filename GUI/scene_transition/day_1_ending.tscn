@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci4y2th8pvq6m"]
+[gd_scene load_steps=9 format=3 uid="uid://ci4y2th8pvq6m"]
 
+[ext_resource type="Script" uid="uid://dr80gyab6wee0" path="res://GUI/scene_transition/day_ending.gd" id="1_jv0mq"]
 [ext_resource type="Texture2D" uid="uid://cq2anj5vec2xb" path="res://imports/npc_and_dialog/sprites/text-bubble.png" id="1_vf5sb"]
 [ext_resource type="FontFile" uid="uid://byp8pvjjh2xjx" path="res://imports/npc_and_dialog/fonts/Abaddon Light.ttf" id="2_rnivp"]
 [ext_resource type="FontFile" uid="uid://dcxhhgadxnvat" path="res://imports/npc_and_dialog/fonts/Abaddon Bold.ttf" id="3_jv0mq"]
@@ -25,6 +26,7 @@ texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 
 [node name="Day1Ending" type="CanvasLayer"]
+script = ExtResource("1_jv0mq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 12

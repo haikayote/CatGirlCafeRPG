@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6kopkqmh1u75" path="res://Player/Sprites/wooden_house-1.tscn" id="1_wt17y"]
 [ext_resource type="PackedScene" uid="uid://ciopepvmttn4k" path="res://Levels/player_spawn.tscn" id="2_wt17y"]
 [ext_resource type="PackedScene" uid="uid://bwg2rr8tgx1aa" path="res://Levels/level_transition.tscn" id="4_is3ju"]
-[ext_resource type="PackedScene" uid="uid://do7dyaxkjhyhm" path="res://Levels/npc_transition.tscn" id="13_dk0co"]
+[ext_resource type="PackedScene" uid="uid://do7dyaxkjhyhm" path="res://Levels/transitions/npc_transition.tscn" id="13_dk0co"]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_m8u5f")
