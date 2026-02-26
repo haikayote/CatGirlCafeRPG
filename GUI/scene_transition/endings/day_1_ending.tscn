@@ -1,0 +1,17 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci4y2th8pvq6m"]
+
+[ext_resource type="Script" uid="uid://cwqdop8kic52b" path="res://Levels/scripts/npc_transition.gd" id="1_sdtam"]
+[ext_resource type="PackedScene" uid="uid://dw5b6yscr21q5" path="res://GUI/scene_transition/endings/day_2_ending.tscn" id="2_1xdbo"]
+[ext_resource type="PackedScene" uid="uid://fpv6io6nfu42" path="res://npc/npc_scenes/npc_01.tscn" id="3_arbg4"]
+[ext_resource type="PackedScene" uid="uid://dleovpwigkvjj" path="res://npc/npc_scenes/npc_02.tscn" id="4_r4jkk"]
+[ext_resource type="PackedScene" uid="uid://0jdrh5a4uvgw" path="res://npc/npc_scenes/npc_03.tscn" id="5_2bdqr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seb75"]
+
+[node name="NpcTransition" type="Area2D"]
+script = ExtResource("1_sdtam")
+day_ending = ExtResource("2_1xdbo")
+npc_scenes = Array[PackedScene]([ExtResource("3_arbg4"), ExtResource("4_r4jkk"), ExtResource("5_2bdqr")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_seb75")

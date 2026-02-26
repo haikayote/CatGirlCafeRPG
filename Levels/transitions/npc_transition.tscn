@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://do7dyaxkjhyhm"]
 
 [ext_resource type="Script" uid="uid://cwqdop8kic52b" path="res://Levels/scripts/npc_transition.gd" id="1_ikisp"]
-[ext_resource type="PackedScene" uid="uid://ci4y2th8pvq6m" path="res://GUI/scene_transition/day_1_ending.tscn" id="2_ayibg"]
+[ext_resource type="PackedScene" uid="uid://ci4y2th8pvq6m" path="res://GUI/scene_transition/endings/day_1_ending.tscn" id="2_ayibg"]
 [ext_resource type="PackedScene" uid="uid://fpv6io6nfu42" path="res://npc/npc_scenes/npc_01.tscn" id="2_xrlsl"]
 [ext_resource type="PackedScene" uid="uid://dleovpwigkvjj" path="res://npc/npc_scenes/npc_02.tscn" id="3_b7be6"]
 [ext_resource type="PackedScene" uid="uid://0jdrh5a4uvgw" path="res://npc/npc_scenes/npc_03.tscn" id="4_b7be6"]

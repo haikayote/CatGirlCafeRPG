@@ -1,10 +1,13 @@
 class_name NPCTransition extends Area2D
 
-@export var day_ending_01 : PackedScene #initialized in the editor
+@export var day_ending : PackedScene #initialized in the editor
 @export var npc_scenes : Array[PackedScene]
+@export var day_endings : Array[PackedScene]
 
 var current_index : int = 0
+var current_day_index : int = 0
 var current_npc : NPC = null
+var current_day : Node = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_next_npc()
@@ -40,7 +43,8 @@ func _on_npc_finished() -> void:
 func end_day() -> void:
 	print("It's time to pack up for the day...")
 	# show dialog
-	var end_scene_instance : Node = day_ending_01.instantiate()
+	var end_scene_instance : Node = day_ending.instantiate()
 	get_tree().current_scene.add_child(end_scene_instance)
 	# change scene back to bedroom
 	# increment day counter
+	current_day_index += 1
