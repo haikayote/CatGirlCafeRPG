@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bodokar5axh1u"]
+[gd_scene load_steps=7 format=4 uid="uid://bodokar5axh1u"]
 
 [ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_m8u5f"]
 [ext_resource type="PackedScene" uid="uid://c6kopkqmh1u75" path="res://Player/Sprites/wooden_house-1.tscn" id="1_wt17y"]
 [ext_resource type="PackedScene" uid="uid://ciopepvmttn4k" path="res://Levels/player_spawn.tscn" id="2_wt17y"]
 [ext_resource type="PackedScene" uid="uid://bwg2rr8tgx1aa" path="res://Levels/level_transition.tscn" id="4_is3ju"]
+[ext_resource type="PackedScene" uid="uid://cpf6ym8xeyts5" path="res://GUI/scene_transition/endings/day_01_ending.tscn" id="5_myt6y"]
 [ext_resource type="PackedScene" uid="uid://do7dyaxkjhyhm" path="res://Levels/transitions/npc_transition.tscn" id="13_dk0co"]
 
 [node name="Playground" type="Node2D"]
@@ -22,6 +23,7 @@ position = Vector2(97, 32)
 
 [node name="NpcTransition" parent="." instance=ExtResource("13_dk0co")]
 position = Vector2(170, 1)
+day_ending = ExtResource("5_myt6y")
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_is3ju")]
 position = Vector2(153, -20)

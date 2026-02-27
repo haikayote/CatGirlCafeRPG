@@ -10,9 +10,9 @@ func _ready() -> void:
 # remove other scene
 # day 2 bedroom scene should have transition to day 2 lobby w / day 2 npcs
 func _on_button_pressed() -> void:
-	var level_scene = load("res://Levels/Area1/03.tscn")
+	var level_scene = load("res://Levels/Area1/04.tscn")
 	var level_instance = level_scene.instantiate()
 	var player_spawn = level_instance.get_node("PlayerSpawn")
-	LevelManager.load_new_level(("res://Levels/Area1/03.tscn"), ("res://Levels/Area1/03.tscn"),Vector2.ZERO)
+	LevelManager.load_new_level(("res://Levels/Area1/04.tscn"), ("res://Levels/Area1/04.tscn"),Vector2.ZERO)
 	GlobalPlayerManager.set_player_position(player_spawn.global_position)
 	pass

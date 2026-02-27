@@ -1,35 +1,35 @@
-[gd_scene load_steps=10 format=4 uid="uid://d0f2vgnpp35na"]
+[gd_scene load_steps=10 format=4 uid="uid://dygug3p580rhn"]
 
-[ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_nwxpy"]
-[ext_resource type="PackedScene" uid="uid://c6kopkqmh1u75" path="res://Player/Sprites/wooden_house-1.tscn" id="2_5b2u5"]
-[ext_resource type="PackedScene" uid="uid://ciopepvmttn4k" path="res://Levels/player_spawn.tscn" id="3_j14ic"]
-[ext_resource type="PackedScene" uid="uid://do7dyaxkjhyhm" path="res://Levels/transitions/npc_transition.tscn" id="4_p78hv"]
-[ext_resource type="PackedScene" uid="uid://cpheuti830x1c" path="res://GUI/scene_transition/endings/day_3_ending.tscn" id="5_nwxpy"]
-[ext_resource type="PackedScene" uid="uid://dahr6sgmqam8n" path="res://npc/npc_scenes/npc_01_day_03.tscn" id="6_nwxpy"]
-[ext_resource type="PackedScene" uid="uid://pihu8mvq8jx0" path="res://npc/npc_scenes/npc_02_day_03.tscn" id="7_5b2u5"]
-[ext_resource type="PackedScene" uid="uid://otiquuoqlng4" path="res://npc/npc_scenes/npc_03_day_03.tscn" id="8_j14ic"]
-[ext_resource type="PackedScene" uid="uid://bwg2rr8tgx1aa" path="res://Levels/level_transition.tscn" id="9_jnbe4"]
+[ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_b5y5l"]
+[ext_resource type="PackedScene" uid="uid://c6kopkqmh1u75" path="res://Player/Sprites/wooden_house-1.tscn" id="2_8ab1s"]
+[ext_resource type="PackedScene" uid="uid://ciopepvmttn4k" path="res://Levels/player_spawn.tscn" id="3_ejx8s"]
+[ext_resource type="PackedScene" uid="uid://do7dyaxkjhyhm" path="res://Levels/transitions/npc_transition.tscn" id="4_pqkxy"]
+[ext_resource type="PackedScene" uid="uid://cpheuti830x1c" path="res://GUI/scene_transition/endings/day_3_ending.tscn" id="5_b5y5l"]
+[ext_resource type="PackedScene" uid="uid://ddn1400ap6sg6" path="res://npc/npc_scenes/npc_01_day_04.tscn" id="6_b5y5l"]
+[ext_resource type="PackedScene" uid="uid://yxatqa232gce" path="res://npc/npc_scenes/npc_02_day_04.tscn" id="7_8ab1s"]
+[ext_resource type="PackedScene" uid="uid://464pyxs1vh4s" path="res://npc/npc_scenes/npc_03_day_04.tscn" id="8_ejx8s"]
+[ext_resource type="PackedScene" uid="uid://bwg2rr8tgx1aa" path="res://Levels/level_transition.tscn" id="9_rywjc"]
 
 [node name="Playground" type="Node2D"]
-script = ExtResource("1_nwxpy")
+script = ExtResource("1_b5y5l")
 
-[node name="WoodenHouse2" parent="." instance=ExtResource("2_5b2u5")]
+[node name="WoodenHouse2" parent="." instance=ExtResource("2_8ab1s")]
 z_index = -1
 tile_map_data = PackedByteArray("AAABAAEAAAABAAQAAAACAAEAAAABAAQAAAADAAEAAAABAAQAAAAEAAEAAAABAAQAAAAFAAEAAAABAAQAAAAGAAEAAAABAAQAAAAHAAEAAAABAAQAAAAIAAEAAAABAAQAAAAJAAEAAAABAAQAAAAJAAIAAAABAAQAAAAJAAMAAAABAAQAAAAJAAQAAAABAAQAAAAIAAQAAAABAAQAAAAHAAQAAAABAAQAAAAGAAQAAAABAAQAAAAFAAQAAAABAAQAAAAEAAQAAAABAAQAAAADAAQAAAABAAQAAAACAAQAAAABAAQAAAABAAQAAAABAAQAAAABAAMAAAABAAQAAAABAAIAAAABAAQAAAACAAIAAAABAAQAAAADAAIAAAABAAQAAAAEAAIAAAABAAQAAAAFAAIAAAABAAQAAAAGAAIAAAABAAQAAAAHAAIAAAABAAQAAAAIAAIAAAABAAQAAAAIAAMAAAABAAQAAAAHAAMAAAABAAQAAAAGAAMAAAABAAQAAAAFAAMAAAABAAQAAAAEAAMAAAABAAQAAAADAAMAAAABAAQAAAACAAMAAAABAAQAAAAAAAEAAQAAAAIAAAAAAAIAAQAAAAIAAAAAAAMAAQAAAAIAAAAAAAQAAQAAAAIAAAAKAAEAAQACAAIAAAAKAAIAAQACAAEAAAAKAAQAAQACAAIAAAAKAAMAAQACAAIAAAAAAAAAAAAAAAMAAAAKAAAAAAACAAMAAAABAAAAAAABAAMAAAACAAAAAAABAAMAAAADAAAAAAABAAMAAAAEAAAAAAABAAMAAAAFAAAAAAABAAMAAAAGAAAAAAABAAMAAAAHAAAAAAABAAMAAAAIAAAAAAADAAEAAAAJAAAAAAABAAMAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAKAP//AAACAAIAAAAAAP//AAAAAAIAAAABAP7/AAABAAIAAAACAP7/AAABAAIAAAADAP7/AAABAAIAAAAEAP7/AAABAAIAAAAFAP7/AAABAAIAAAAGAP7/AAABAAIAAAAHAP7/AAABAAIAAAAIAP7/AAABAAIAAAAJAP7/AAABAAIAAAAKAP7/AAACAAIAAAAAAP7/AAAAAAIAAAABAAUAAAABAAMAAAACAAUAAAABAAMAAAADAAUAAAABAAMAAAAEAAUAAAABAAMAAAAFAAUAAAABAAMAAAAGAAUAAAABAAMAAAAHAAUAAAABAAMAAAAIAAUAAAABAAMAAAAJAAUAAAABAAMAAAAKAAUAAAACAAMAAAAAAAUAAAAAAAMAAAA=")
 
-[node name="Furniture" parent="." instance=ExtResource("2_5b2u5")]
+[node name="Furniture" parent="." instance=ExtResource("2_8ab1s")]
 z_index = -1
 tile_map_data = PackedByteArray("AAABAAEAAQAFAAQAAAACAAEAAAABAAQAAAADAAEAAQAFAAQAAAAEAAEAAAABAAQAAAAFAAEAAQAFAAQAAAAGAAEAAAABAAQAAAAHAAEAAAABAAQAAAAIAAEAAAABAAQAAAAJAAEAAAABAAQAAAAJAAMAAAABAAQAAAAJAAQAAQAFAAQAAAAIAAQAAAABAAQAAAAHAAQAAQAEAAQAAAAGAAQAAQADAAQAAAAFAAQAAQADAAQAAAAEAAQAAQACAAQAAAACAAQAAAABAAQAAAABAAMAAQAFAAQAAAACAAIAAAABAAQAAAADAAIAAAABAAQAAAAEAAIAAAABAAQAAAAFAAIAAAABAAQAAAAGAAIAAAABAAQAAAAHAAIAAAABAAQAAAAIAAIAAAABAAQAAAAIAAMAAAABAAQAAAAHAAMAAAABAAQAAAAGAAMAAAABAAQAAAAFAAMAAAABAAQAAAAEAAMAAAABAAQAAAADAAMAAAABAAQAAAAAAAEAAQAAAAIAAAAAAAIAAQAAAAIAAAAAAAMAAQAAAAIAAAAAAAQAAQAAAAIAAAAKAAEAAQACAAIAAAAKAAIAAQACAAEAAAAKAAQAAAACAAIAAAAKAAMAAAACAAIAAAAAAAAAAAAAAAMAAAAKAAAAAAACAAMAAAABAAAAAAABAAMAAAACAAAAAAABAAMAAAADAAAAAAABAAMAAAAEAAAAAAABAAMAAAAFAAAAAAABAAMAAAAGAAAAAAABAAMAAAAHAAAAAAABAAMAAAAIAAAAAAADAAEAAAAJAAAAAAABAAMAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAKAP//AAACAAIAAAAAAP//AAAAAAIAAAABAP7/AAABAAIAAAACAP7/AAABAAIAAAADAP7/AAABAAIAAAAEAP7/AAABAAIAAAAFAP7/AAABAAIAAAAGAP7/AAABAAIAAAAHAP7/AAABAAIAAAAIAP7/AAABAAIAAAAJAP7/AAABAAIAAAAKAP7/AAACAAIAAAAAAP7/AAAAAAIAAAABAAUAAAABAAMAAAACAAUAAAABAAMAAAADAAUAAAABAAMAAAAEAAUAAAABAAMAAAAFAAUAAAABAAMAAAAGAAUAAAABAAMAAAAHAAUAAAABAAMAAAAIAAUAAAABAAMAAAAJAAUAAAABAAMAAAAKAAUAAAACAAMAAAAAAAUAAAAAAAMAAAA=")
 
-[node name="PlayerSpawn" parent="." instance=ExtResource("3_j14ic")]
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_ejx8s")]
 position = Vector2(97, 32)
 
-[node name="NpcTransition" parent="." instance=ExtResource("4_p78hv")]
+[node name="NpcTransition" parent="." instance=ExtResource("4_pqkxy")]
 position = Vector2(170, 1)
-day_ending = ExtResource("5_nwxpy")
-npc_scenes = Array[PackedScene]([ExtResource("6_nwxpy"), ExtResource("7_5b2u5"), ExtResource("8_j14ic")])
+day_ending = ExtResource("5_b5y5l")
+npc_scenes = Array[PackedScene]([ExtResource("6_b5y5l"), ExtResource("7_8ab1s"), ExtResource("8_ejx8s")])
 
-[node name="LevelTransition" parent="." instance=ExtResource("9_jnbe4")]
+[node name="LevelTransition" parent="." instance=ExtResource("9_rywjc")]
 position = Vector2(153, -20)
 level = "uid://nyap12yyl51o"
 size = 1

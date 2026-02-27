@@ -8,8 +8,11 @@ var current_index : int = 0
 var current_day_index : int = 0
 var current_npc : NPC = null
 var current_day : Node = null
+var day_over : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if day_over: #prevents npc from spawning again
+		return
 	spawn_next_npc()
 func spawn_next_npc() -> void:
 	# If no more NPCs, end the day
@@ -27,6 +30,10 @@ func spawn_next_npc() -> void:
 
 	
 func _on_npc_finished() -> void:
+	print("NPC FINISHED called, index:", current_index)
+	if day_over:
+		return
+
 	# Remove current NPC
 	current_npc.queue_free()
 	current_npc = null
@@ -41,6 +48,9 @@ func _on_npc_finished() -> void:
 
 
 func end_day() -> void:
+	if day_over:
+		return
+	day_over = true
 	print("It's time to pack up for the day...")
 	# show dialog
 	var end_scene_instance : Node = day_ending.instantiate()

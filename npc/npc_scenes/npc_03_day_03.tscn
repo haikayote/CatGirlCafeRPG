@@ -182,191 +182,208 @@ wait_time = 999.0
 
 [node name="DialogText" type="Node" parent="DialogInteraction"]
 script = ExtResource("6_kejod")
-text = "What do you want?"
-npc_info = ExtResource("7_a226t")
+text = "So, how’s your day going?"
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction"]
 script = ExtResource("6_kejod")
-text = "I don’t know, surprise me."
+text = "..."
+npc_info = ExtResource("7_a226t")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_kejod")
+text = "My what?"
+npc_info = ExtResource("7_a226t")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_kejod")
+text = "You can barely hear them against the environment around you."
+npc_info = ExtResource("11_q5nu7")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_kejod")
+text = "Your [shake]day[/shake]. You look beat."
 npc_info = ExtResource("8_shpse")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText6" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_kejod")
+text = "I’m..."
+npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogChoice" type="Node" parent="DialogInteraction"]
 script = ExtResource("9_gbiq5")
-npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
 
 [node name="DialogBranch" type="Node" parent="DialogInteraction/DialogChoice"]
 script = ExtResource("10_seapm")
-text = "A double shot of espresso over ice with vanilla and cream. "
+text = "not feeling so good."
 npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
 [node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "They inspect the cup before taking a sip."
-npc_info = ExtResource("11_q5nu7")
+text = "Oh no! "
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "This isn’t what I meant."
-npc_info = ExtResource("8_shpse")
+text = "It’s okay, just going through a rough time. "
+npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "They hand the drink back over the counter. "
-npc_info = ExtResource("11_q5nu7")
+text = "Do you want to talk about it? I can make this coffee for here."
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "I’m sorry, we can’t take the drinks back. "
-npc_info = ExtResource("7_a226t")
+text = "You bite your lip uneasily, unsure of what to tell a stranger."
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "It’s a health code violation."
+text = "It’s okay. What can I get you? "
 npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "I can make you a new one, just tell me what you’d like."
-npc_info = ExtResource("7_a226t")
+text = "I just want an iced black americano. Pretty please."
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText7" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "I don’t know what I want."
-npc_info = ExtResource("8_shpse")
+text = "You wince in anticipation of any prying questions. "
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText8" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "I don’t know what I need."
-npc_info = ExtResource("8_shpse")
+text = "You’re not ready for an audience."
+npc_info = ExtResource("11_q5nu7")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText9" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("6_kejod")
+text = "Of course, here you go."
+npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText10" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("6_kejod")
-text = "They take the drink back from you, leaving quickly, as if they’re running from something."
+text = "They seem to forget their previous conversation, and they walk out with their nose tucked in their phone."
 npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogBranch2" type="Node" parent="DialogInteraction/DialogChoice"]
 script = ExtResource("10_seapm")
-text = "Tell them to leave."
+text = "totally fine! What can I get you?"
 npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
 [node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("6_kejod")
-text = "You pause, ruminating over the decision in your head. "
-npc_info = ExtResource("11_q5nu7")
+text = "Oh, okay!"
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("6_kejod")
-text = "The words almost slip from your mouth."
-npc_info = ExtResource("11_q5nu7")
+text = "Could I please get an iced americano? "
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("6_kejod")
-text = "I don’t know you."
-npc_info = ExtResource("7_a226t")
+text = "You force a smile that doesn’t quite reach your eyes. "
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("6_kejod")
-text = "I don’t know what you like."
-npc_info = ExtResource("7_a226t")
+text = "Your hands move on autopilot preparing the coffee, grateful for a distraction."
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("6_kejod")
-text = "I don’t know how to help you."
+text = "Iced americano, here you go."
 npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("6_kejod")
-text = "Are you serious?"
-npc_info = ExtResource("8_shpse")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText7" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_kejod")
-text = "Fine. Can I just get black coffee?"
-npc_info = ExtResource("8_shpse")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText8" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_kejod")
-text = "Gladly."
-npc_info = ExtResource("7_a226t")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText9" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_kejod")
-text = "You hand them the drink, and they barely acknowledge your presence before leaving."
+text = "You exchange the drink, relieved that the moment is over."
 npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogBranch3" type="Node" parent="DialogInteraction/DialogChoice"]
 script = ExtResource("10_seapm")
-text = "A single shot of espresso with steamed chocolate milk."
+text = "...what do you want from me?"
 npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
 [node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "They lift the cup, turning it around in their hand before setting it down."
-npc_info = ExtResource("11_q5nu7")
+text = "Oh, I’m sorry, I just meant... are you okay? "
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "Hot drinks are disgusting. I want this iced."
-npc_info = ExtResource("8_shpse")
+text = "The words slip out harsher than intended. "
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "This is unbelievable. Your service is so slow."
-npc_info = ExtResource("8_shpse")
+text = "You feel the pressure building up in your chest. "
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "And why do you look at me like that?"
-npc_info = ExtResource("8_shpse")
+text = "Please order. "
+npc_info = ExtResource("7_a226t")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "Like what?"
-npc_info = ExtResource("7_a226t")
+text = "Can I... sorry... can I please have an iced americano?"
+npc_info = ExtResource("8_shpse")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "Like you don’t belong here. "
-npc_info = ExtResource("8_shpse")
+text = "The air feels heavy with guilt, with a twinge of awkwardness."
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText7" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "You hand them the drink remade as an iced mocha. "
+text = "You pass the drink over, not meeting their gaze."
 npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText8" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("6_kejod")
-text = "Have a wonderful day. "
-npc_info = ExtResource("7_a226t")
+text = "Thank you..."
+npc_info = ExtResource("8_shpse")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText9" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
+script = ExtResource("6_kejod")
+text = "The shop feels colder as they leave."
+npc_info = ExtResource("11_q5nu7")
 metadata/_custom_type_script = "uid://785rj1abomch"

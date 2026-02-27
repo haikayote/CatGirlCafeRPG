@@ -1,16 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://pihu8mvq8jx0"]
+[gd_scene load_steps=21 format=3 uid="uid://yxatqa232gce"]
 
-[ext_resource type="Script" uid="uid://brixpvtegghto" path="res://npc/scripts/npc.gd" id="1_ulnb8"]
-[ext_resource type="Texture2D" uid="uid://ccybak2jsigf0" path="res://npc/sprites/npc_sprite_02.png" id="2_ddkue"]
-[ext_resource type="PackedScene" uid="uid://1p38oaxpvfg" path="res://npc/npc_behavior_patrol.tscn" id="3_5otfx"]
-[ext_resource type="PackedScene" uid="uid://daxkqata0jx5j" path="res://npc/patrol_location.tscn" id="4_o3ejo"]
-[ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="5_wkjt8"]
-[ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="6_cwrc4"]
-[ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="7_h6vlk"]
-[ext_resource type="Resource" uid="uid://ra3p251oc6gb" path="res://npc/00_npcs/npc_02.tres" id="8_ux88c"]
-[ext_resource type="Resource" uid="uid://wlowqr6vu3qb" path="res://npc/00_npcs/narrator.tres" id="9_pih2p"]
-[ext_resource type="Script" uid="uid://bu72pcrg4ws6q" path="res://GUI/dialog_system/scripts/dialog_choice.gd" id="10_puwrn"]
-[ext_resource type="Script" uid="uid://dhh7suegfpi4q" path="res://GUI/dialog_system/scripts/dialog_branch.gd" id="11_45mc8"]
+[ext_resource type="Script" uid="uid://brixpvtegghto" path="res://npc/scripts/npc.gd" id="1_8evdh"]
+[ext_resource type="Texture2D" uid="uid://ccybak2jsigf0" path="res://npc/sprites/npc_sprite_02.png" id="2_negq8"]
+[ext_resource type="PackedScene" uid="uid://1p38oaxpvfg" path="res://npc/npc_behavior_patrol.tscn" id="3_0h51b"]
+[ext_resource type="PackedScene" uid="uid://daxkqata0jx5j" path="res://npc/patrol_location.tscn" id="4_lcpkv"]
+[ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="5_n3087"]
+[ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="6_vlw1f"]
+[ext_resource type="Resource" uid="uid://wlowqr6vu3qb" path="res://npc/00_npcs/narrator.tres" id="7_rrv5g"]
+[ext_resource type="Resource" uid="uid://ra3p251oc6gb" path="res://npc/00_npcs/npc_02.tres" id="8_kcv76"]
+[ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="9_g4bmx"]
+[ext_resource type="Script" uid="uid://bu72pcrg4ws6q" path="res://GUI/dialog_system/scripts/dialog_choice.gd" id="10_07j4j"]
+[ext_resource type="Script" uid="uid://dhh7suegfpi4q" path="res://GUI/dialog_system/scripts/dialog_branch.gd" id="11_gefog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3i1kj"]
 size = Vector2(16, 8)
@@ -147,12 +147,12 @@ _data = {
 texture_filter = 1
 collision_layer = 0
 collision_mask = 16
-script = ExtResource("1_ulnb8")
+script = ExtResource("1_8evdh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -15)
-texture = ExtResource("2_ddkue")
+texture = ExtResource("2_negq8")
 hframes = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -164,262 +164,251 @@ libraries = {
 &"": SubResource("AnimationLibrary_phifv")
 }
 
-[node name="NpcBehaviorPatrol" parent="." instance=ExtResource("3_5otfx")]
+[node name="NpcBehaviorPatrol" parent="." instance=ExtResource("3_0h51b")]
 
-[node name="PatrolLocation" parent="NpcBehaviorPatrol" instance=ExtResource("4_o3ejo")]
+[node name="PatrolLocation" parent="NpcBehaviorPatrol" instance=ExtResource("4_lcpkv")]
 modulate = Color(1, 0, 0, 1)
 
-[node name="PatrolLocation3" parent="NpcBehaviorPatrol" instance=ExtResource("4_o3ejo")]
+[node name="PatrolLocation3" parent="NpcBehaviorPatrol" instance=ExtResource("4_lcpkv")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(-43, 1)
 
-[node name="PatrolLocation2" parent="NpcBehaviorPatrol" instance=ExtResource("4_o3ejo")]
+[node name="PatrolLocation2" parent="NpcBehaviorPatrol" instance=ExtResource("4_lcpkv")]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(-80, 19)
 wait_time = 999.0
 
-[node name="DialogInteraction" parent="." instance=ExtResource("5_wkjt8")]
+[node name="DialogInteraction" parent="." instance=ExtResource("5_n3087")]
 
 [node name="DialogText" type="Node" parent="DialogInteraction"]
-script = ExtResource("6_cwrc4")
-text = "Still groggy from the last customer, you slowly close your eyes before having to meet with the next."
-npc_info = ExtResource("9_pih2p")
+script = ExtResource("6_vlw1f")
+text = "Hello, can I get a-"
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction"]
-script = ExtResource("6_cwrc4")
-text = "Hello?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "Your head feels like it’s splitting."
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction"]
-script = ExtResource("6_cwrc4")
-text = "Sorry! Oh my goodness, sorry."
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "Hold on- hold on..."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction"]
-script = ExtResource("6_cwrc4")
-text = "Can I get a..."
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "You grasp your temples, unable to perceive what they’re saying to you right now."
+npc_info = ExtResource("7_rrv5g")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_vlw1f")
+text = "What?"
+npc_info = ExtResource("9_g4bmx")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText6" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_vlw1f")
+text = "I said... are you okay?"
+npc_info = ExtResource("8_kcv76")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText7" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_vlw1f")
+text = "Do you need me to get someone? "
+npc_info = ExtResource("8_kcv76")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText8" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_vlw1f")
+text = "Your heart jolts in anticipation of an extra cost... ambulance, ER, anything..."
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogChoice" type="Node" parent="DialogInteraction"]
-script = ExtResource("10_puwrn")
+script = ExtResource("10_07j4j")
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
 
 [node name="DialogBranch" type="Node" parent="DialogInteraction/DialogChoice"]
-script = ExtResource("11_45mc8")
-text = "..."
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("11_gefog")
+text = "Tell them to leave."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
 [node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "Are you even listening?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "You need to leave."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "Sorry, could you repeat that?"
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "What?"
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "I said.... can I get a hot tea?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "There’s something wrong here."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "It’s starting to get colder, but my patience is growing quite thin, so I will need that as soon as possible."
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "I think we’re going to have to close up shop early."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "Please and thank you."
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "You scan the room, paranoid."
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "Thank you for saying that."
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "Wrong? Like... bugs...?"
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText7" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "Saying what?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "You need to go."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText8" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "You feel a spark of joy from their formality, a slight kick to your brain to keep you awake."
-npc_info = ExtResource("9_pih2p")
+script = ExtResource("6_vlw1f")
+text = "Now."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText9" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "You slide the hot black tea over the counter."
-npc_info = ExtResource("9_pih2p")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText10" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("6_cwrc4")
-text = "The smell of it keeps you awake for the next customer."
-npc_info = ExtResource("9_pih2p")
+script = ExtResource("6_vlw1f")
+text = "O-oh okay..."
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogBranch2" type="Node" parent="DialogInteraction/DialogChoice"]
-script = ExtResource("11_45mc8")
-text = "..."
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("11_gefog")
+text = "Make an excuse."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
 [node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "Are you even listening?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "Sorry, I just have a really bad migraine."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "Sorry, say that again?"
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "My friends had a party in our dorm last night, didn’t get a lot of sleep."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "I would’ve expected you to be more prepared."
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "You’re lying straight through your fake smile. "
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "Why are you just slacking off?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "Oh, young fun."
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "I’m sorry."
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "Pop an aspirin, that should help! "
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "What can I get you?"
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "Haha, yeah, I’ve got to."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText7" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "Can I get coffee?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "You laugh, but you take it as a threat."
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText8" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "You don’t even think to ask of the specifications of their coffee, ice level, sweetness, flavors, etc..."
-npc_info = ExtResource("9_pih2p")
+script = ExtResource("6_vlw1f")
+text = "Could I get an energy drink?"
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText9" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "This isn’t what I wanted."
-npc_info = ExtResource("8_ux88c")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText10" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "Unbelievable. This is just black coffee straight from the machine."
-npc_info = ExtResource("8_ux88c")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText11" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "You struggle to meet the customer's gaze."
-npc_info = ExtResource("9_pih2p")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText12" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "Clearly, you’re on something."
-npc_info = ExtResource("8_ux88c")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText13" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("6_cwrc4")
-text = "I’ll be taking my business elsewhere. "
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "Of course. "
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogBranch3" type="Node" parent="DialogInteraction/DialogChoice"]
-script = ExtResource("11_45mc8")
-text = "..."
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("11_gefog")
+text = "Ask why."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://dhh7suegfpi4q"
 
 [node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "Are you even listening?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "Why would you do that?"
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "Could you repeat that?"
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "To... help you?"
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "I said... I want an iced coffee!"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "The customer’s words feel harsh and accusing."
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "..."
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "I’m fine."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "Do you even understand the words coming out of my mouth?"
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "No, I think you need something... someone."
+npc_info = ExtResource("8_kcv76")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText6" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "Your head pounds as you regret not calling out of work."
-npc_info = ExtResource("9_pih2p")
+script = ExtResource("6_vlw1f")
+text = "I need you to leave."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText7" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "Can I just get an iced coffee to go? That’s all I want."
-npc_info = ExtResource("8_ux88c")
+script = ExtResource("6_vlw1f")
+text = "I can’t handle this."
+npc_info = ExtResource("9_g4bmx")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText8" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "Of course, I’m sorry."
-npc_info = ExtResource("7_h6vlk")
+script = ExtResource("6_vlw1f")
+text = "You shrink away, afraid of what’s to come next."
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
 [node name="DialogText9" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "No, I’m sorry that I came here."
-npc_info = ExtResource("8_ux88c")
-metadata/_custom_type_script = "uid://785rj1abomch"
-
-[node name="DialogText10" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch3"]
-script = ExtResource("6_cwrc4")
-text = "They take the coffee straight from your hands, leaving without another word."
-npc_info = ExtResource("9_pih2p")
+script = ExtResource("6_vlw1f")
+text = "You’re not ready to tell anyone what you need."
+npc_info = ExtResource("7_rrv5g")
 metadata/_custom_type_script = "uid://785rj1abomch"
