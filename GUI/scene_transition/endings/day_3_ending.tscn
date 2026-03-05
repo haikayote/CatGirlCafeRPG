@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpheuti830x1c"]
+[gd_scene format=3 uid="uid://cpheuti830x1c"]
 
 [ext_resource type="Script" uid="uid://b7l8ywevxwbyg" path="res://GUI/scene_transition/endings/day_3_ending.gd" id="1_vh6ha"]
 [ext_resource type="Texture2D" uid="uid://cq2anj5vec2xb" path="res://imports/npc_and_dialog/sprites/text-bubble.png" id="2_o45dx"]

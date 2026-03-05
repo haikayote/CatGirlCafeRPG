@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ce87blbeikrty"]
+[gd_resource type="Theme" format=3 uid="uid://ce87blbeikrty"]
 
 [ext_resource type="FontFile" uid="uid://byp8pvjjh2xjx" path="res://imports/npc_and_dialog/fonts/Abaddon Light.ttf" id="1_eecbu"]
 
