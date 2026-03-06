@@ -27,12 +27,12 @@ SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
 SaveManager="*res://00_Globals/GlobalSaveManager.gd"
 PauseMenu="*res://GUI/pause_menu/pause_menu.tscn"
 DialogSystem="*res://GUI/dialog_system/dialog_system.tscn"
-GlobalNpcManager="*res://00_Globals/GlobalNPCManager.gd"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
+window/size/mode=3
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
@@ -88,4 +88,4 @@ attack={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.027796071, 0.010620661, 0.0034479245, 1)
+environment/defaults/default_clear_color=Color(0.17716679, 0.010940342, 0.14931053, 1)
