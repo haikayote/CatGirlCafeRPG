@@ -333,7 +333,13 @@ position = Vector2(73, 8)
 
 [node name="DialogText" type="Node" parent="MirrorText/DialogInteraction" unique_id=1675155955]
 script = ExtResource("8_jx7to")
-text = "You're unsure of your appearance."
+text = "Your mirror reflects your excitement on your face. "
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="MirrorText/DialogInteraction" unique_id=161082110]
+script = ExtResource("8_jx7to")
+text = "A new day awaits you with endless possibilities."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -345,7 +351,13 @@ position = Vector2(73, 8)
 
 [node name="DialogText" type="Node" parent="CouchText/DialogInteraction" unique_id=1591777425]
 script = ExtResource("8_jx7to")
-text = "You're unsure of your appearance."
+text = "Your couch has been there for you in your roughest moments."
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="CouchText/DialogInteraction" unique_id=1541916421]
+script = ExtResource("8_jx7to")
+text = "It's most comfortable when you're horribly hungover."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -357,7 +369,13 @@ position = Vector2(12, 41)
 
 [node name="DialogText" type="Node" parent="DeskText/DialogInteraction" unique_id=100645279]
 script = ExtResource("8_jx7to")
-text = "You're not ready to pick up the phone."
+text = "Your phone waits for you, ready for a scroll through messages from friends and family."
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DeskText/DialogInteraction" unique_id=1174296310]
+script = ExtResource("8_jx7to")
+text = "Your laptop lingers, unused after a long college semester."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -369,7 +387,13 @@ position = Vector2(12, 41)
 
 [node name="DialogText" type="Node" parent="BedText/DialogInteraction" unique_id=230496615]
 script = ExtResource("8_jx7to")
-text = "You're not ready to pick up the phone."
+text = "Your bed is made, reflecting your readiness for the day ahead of you."
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="BedText/DialogInteraction" unique_id=426176335]
+script = ExtResource("8_jx7to")
+text = "You probably won't tidy it again for another week."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -381,7 +405,13 @@ position = Vector2(12, 41)
 
 [node name="DialogText" type="Node" parent="Picture1Text/DialogInteraction" unique_id=318818086]
 script = ExtResource("8_jx7to")
-text = "You're not ready to pick up the phone."
+text = "A painting you made in highschool."
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="Picture1Text/DialogInteraction" unique_id=823079636]
+script = ExtResource("8_jx7to")
+text = "To you, the mistakes are obvious yet charming."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -393,7 +423,13 @@ position = Vector2(12, 41)
 
 [node name="DialogText" type="Node" parent="Picture2Text/DialogInteraction" unique_id=158218678]
 script = ExtResource("8_jx7to")
-text = "You're not ready to pick up the phone."
+text = "A housewarming gift from a friend."
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="Picture2Text/DialogInteraction" unique_id=736745845]
+script = ExtResource("8_jx7to")
+text = "It reminds you of your friendship with her everyday."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -405,7 +441,13 @@ position = Vector2(12, 41)
 
 [node name="DialogText" type="Node" parent="FridgeText/DialogInteraction" unique_id=400737757]
 script = ExtResource("8_jx7to")
-text = "You're not ready to pick up the phone."
+text = "Your fridge is filled with leftovers from dinner with family."
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="FridgeText/DialogInteraction" unique_id=1022982460]
+script = ExtResource("8_jx7to")
+text = "You're so excited for your first day that you're not even hungry."
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
@@ -417,6 +459,12 @@ position = Vector2(12, 41)
 
 [node name="DialogText" type="Node" parent="PetBedText/DialogInteraction" unique_id=1397309263]
 script = ExtResource("8_jx7to")
-text = "You're not ready to pick up the phone."
+text = "Your therapist suggested that you get a pet."
+npc_info = ExtResource("9_1vyir")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="PetBedText/DialogInteraction" unique_id=1295595797]
+script = ExtResource("8_jx7to")
+text = "For now, you only have their bed, but with this job, you can save up for more!"
 npc_info = ExtResource("9_1vyir")
 metadata/_custom_type_script = "uid://785rj1abomch"

@@ -88,4 +88,4 @@ attack={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.17716679, 0.010940342, 0.14931053, 1)
+environment/defaults/default_clear_color=Color(0.6300502, 0.13017425, 0.5493892, 1)

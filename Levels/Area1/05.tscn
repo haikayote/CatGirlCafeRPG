@@ -1,83 +1,168 @@
 [gd_scene format=4 uid="uid://cyisum7h2wwks"]
 
 [ext_resource type="Script" uid="uid://b3j5h7cemips2" path="res://Levels/scripts/level.gd" id="1_p3vps"]
-[ext_resource type="Texture2D" uid="uid://d2uhqmm3c466m" path="res://Player/Sprites/SECONDBARISTA.png" id="2_bw3cl"]
-[ext_resource type="Texture2D" uid="uid://7ouccowjqslb" path="res://Player/Sprites/UpdatedFurniture.png" id="3_xe23k"]
+[ext_resource type="Texture2D" uid="uid://bao15tshp7il8" path="res://Player/Sprites/Wooden House-1.png (4) (2).png" id="2_bw3cl"]
+[ext_resource type="Texture2D" uid="uid://35k0jr5ir8rp" path="res://Player/Sprites/Wooden House-1.png (4) (4).png" id="3_xe23k"]
 [ext_resource type="Texture2D" uid="uid://c6fl3qt12n2ik" path="res://Player/Sprites/Bedroom.png" id="4_66amb"]
+[ext_resource type="Texture2D" uid="uid://cvbf48d0upiu5" path="res://Player/Sprites/Wooden House-1.png (4) (5).png" id="4_fgoix"]
 [ext_resource type="PackedScene" uid="uid://ciopepvmttn4k" path="res://Levels/player_spawn.tscn" id="5_fgoix"]
+[ext_resource type="Script" uid="uid://cgons44k546hq" path="res://Levels/Area1/05_color.gd" id="5_xe23k"]
+[ext_resource type="PackedScene" uid="uid://bwg2rr8tgx1aa" path="res://Levels/level_transition.tscn" id="7_0047u"]
 [ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="7_qpcby"]
 [ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="8_lekt1"]
 [ext_resource type="Resource" uid="uid://wlowqr6vu3qb" path="res://npc/00_npcs/narrator.tres" id="9_6hhom"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p8lo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kedhl"]
 texture = ExtResource("2_bw3cl")
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1yxc"]
+texture = ExtResource("3_xe23k")
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5uw0"]
+texture = ExtResource("4_fgoix")
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
 0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g436i"]
-texture = ExtResource("3_xe23k")
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5971737, -8, -8, -8, -8, 8, -3.7770329, 8)
-3:0/0 = 0
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5971737, -8, 8, -8, 8, 8, 3.7770329, 8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5971737, -8, -8, -8, -8, 8, -3.7770329, 8)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5971737, -8, 8, -8, 8, 8, 3.7770329, 8)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5971737, -8, -8, -8, -8, 8, -3.7770329, 8)
 3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
 0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5971737, -8, 8, -8, 8, 8, 3.7770329, 8)
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
 1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
 3:4/0 = 0
 4:4/0 = 0
 5:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_12x5p"]
+physics_layer_0/collision_layer = 25
+physics_layer_0/collision_mask = 25
+sources/0 = SubResource("TileSetAtlasSource_kedhl")
+sources/1 = SubResource("TileSetAtlasSource_p1yxc")
+sources/2 = SubResource("TileSetAtlasSource_p5uw0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sq11b"]
 texture = ExtResource("4_66amb")
@@ -107,34 +192,43 @@ texture = ExtResource("4_66amb")
 4:4/0 = 0
 5:4/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_i1foo"]
-physics_layer_0/collision_layer = 16
-physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_5p8lo")
-sources/1 = SubResource("TileSetAtlasSource_g436i")
-sources/2 = SubResource("TileSetAtlasSource_sq11b")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bs6rt"]
-texture = ExtResource("4_66amb")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vyir"]
+texture = ExtResource("3_xe23k")
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+4:1/0 = 0
 6:1/0 = 0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:2/0 = 0
 4:2/0 = 0
+5:2/0 = 0
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -142,37 +236,219 @@ texture = ExtResource("4_66amb")
 4:4/0 = 0
 5:4/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_1vyir"]
-sources/0 = SubResource("TileSetAtlasSource_bs6rt")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jx7to"]
+texture = ExtResource("4_fgoix")
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
 
-[node name="05" type="Node2D" unique_id=2005851342]
+[sub_resource type="TileSet" id="TileSet_bs6rt"]
+physics_layer_0/collision_layer = 17
+physics_layer_0/collision_mask = 16
+sources/0 = SubResource("TileSetAtlasSource_sq11b")
+sources/1 = SubResource("TileSetAtlasSource_1vyir")
+sources/2 = SubResource("TileSetAtlasSource_jx7to")
+
+[node name="03" type="Node2D" unique_id=968084455]
 script = ExtResource("1_p3vps")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1630595531]
-z_index = -1
-tile_map_data = PackedByteArray("AAAAAAAAAAABAAQAAAABAAAAAAABAAQAAAACAAAAAAABAAQAAAADAAAAAAABAAQAAAAEAAAAAAABAAQAAAAEAAEAAAABAAQAAAADAAEAAAABAAQAAAACAAEAAAABAAQAAAABAAEAAAABAAQAAAAAAAEAAAABAAQAAAAAAAIAAAABAAQAAAACAAIAAAABAAQAAAABAAIAAAABAAQAAAADAAIAAAABAAQAAAAEAAIAAAABAAQAAAAEAAMAAAABAAQAAAADAAMAAAABAAQAAAACAAMAAAABAAQAAAABAAMAAAABAAQAAAAAAAMAAAABAAQAAAD//wMAAQAAAAIAAAD//wIAAQAAAAIAAAD//wEAAQAAAAIAAAD//wAAAQAAAAIAAAAEAP//AQABAAMAAAADAP//AQABAAMAAAACAP//AQABAAMAAAABAP//AQABAAMAAAAAAP//AQABAAMAAAD/////AQAAAAIAAAAAAP7/AQABAAIAAAABAP7/AQABAAIAAAACAP7/AQABAAIAAAADAP7/AQABAAIAAAAEAP7/AQABAAIAAAD///7/AQAAAAIAAAAFAP7/AQACAAIAAAAFAP//AQACAAIAAAAFAAAAAQACAAIAAAAFAAEAAQACAAIAAAAFAAIAAQACAAIAAAAFAAMAAQACAAIAAAAAAAQAAQABAAMAAAABAAQAAQABAAMAAAACAAQAAQABAAMAAAADAAQAAQABAAMAAAAEAAQAAAADAAEAAAD//wQAAAAAAAMAAAAFAAQAAQACAAIAAAAAAP3/AQABAAMAAAABAP3/AQABAAMAAAACAP3/AQABAAMAAAADAP3/AQABAAMAAAAEAP3/AQABAAMAAAD///3/AQAAAAEAAAAFAP3/AQACAAAAAAA=")
-tile_set = SubResource("TileSet_i1foo")
+[node name="floor" type="TileMapLayer" parent="." unique_id=1008776409]
+z_index = -4
+tile_map_data = PackedByteArray("AAAAAAMAAAABAAQAAAABAAMAAAABAAQAAAACAAMAAAABAAQAAAADAAMAAAABAAQAAAAEAAMAAAABAAQAAAAEAAIAAAABAAQAAAAEAAEAAgABAAMAAAAEAAAAAAABAAQAAAAEAP//AAABAAQAAAAEAP7/AAABAAQAAAAFAAAAAAABAAQAAAAGAAAAAAABAAQAAAAHAAAAAAABAAQAAAAIAAAAAAABAAQAAAAJAAAAAAABAAQAAAAFAAEAAAABAAQAAAAGAAEAAAABAAQAAAAIAAEAAAABAAQAAAAJAAEAAAABAAQAAAAJAP//AAABAAQAAAAJAP7/AAABAAQAAAAAAP//AAABAAQAAAAAAAAAAAABAAQAAAAAAAEAAAABAAQAAAAAAAIAAAABAAQAAAAAAP7/AAABAAQAAAABAP7/AAABAAQAAAABAP//AAABAAQAAAABAAAAAAABAAQAAAABAAEAAAABAAQAAAABAAIAAAABAAQAAAACAAIAAAABAAQAAAACAAEAAAABAAQAAAADAAAAAAABAAQAAAACAAAAAAABAAQAAAACAP//AAABAAQAAAACAP7/AAABAAQAAAADAP7/AAABAAQAAAADAP//AAABAAQAAAADAAEAAAABAAQAAAADAAIAAAABAAQAAAAFAP7/AAABAAQAAAAGAP7/AAABAAQAAAAHAP7/AAABAAQAAAAFAP//AAABAAQAAAAGAP//AAABAAQAAAAHAP//AAABAAQAAAAIAP//AAABAAQAAAAIAP7/AAABAAQAAAAAAAQAAAABAAQAAAABAAQAAAABAAQAAAACAAQAAAABAAQAAAADAAQAAAABAAQAAAAEAAQAAAABAAQAAAAAAP3/AAABAAMAAAABAP3/AAABAAMAAAACAP3/AAABAAMAAAAHAP3/AAABAAMAAAAIAP3/AAABAAMAAAAJAP3/AAABAAMAAAAAAAUAAAABAAQAAAABAAUAAAABAAQAAAACAAUAAAABAAQAAAADAAUAAAABAAQAAAAEAAUAAAABAAQAAAAAAPz/AAABAAIAAAABAPz/AAABAAIAAAACAPz/AAABAAIAAAADAPz/AAABAAIAAAAEAPz/AAABAAIAAAAFAPz/AAABAAIAAAAGAPz/AAABAAIAAAAHAPz/AAABAAIAAAAIAPz/AAABAAIAAAAJAPz/AAABAAIAAAAEAP3/AgABAAMAAAAFAP3/AgABAAMAAAADAP3/AQABAAAAAAAGAP3/AQABAAAAAAA=")
+tile_set = SubResource("TileSet_12x5p")
+script = ExtResource("5_xe23k")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=463379675]
-tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAAEAP7/AAAGAAAAAAAEAP//AAAGAAEAAAAAAAIAAAAEAAIAAAA=")
-tile_set = SubResource("TileSet_1vyir")
+[node name="floor2" type="TileMapLayer" parent="." unique_id=958554880]
+z_index = -2
+tile_map_data = PackedByteArray("AAABAAMAAAABAAQAAAACAAMAAAABAAQAAAADAAMAAAABAAQAAAAEAAAAAAABAAQAAAAEAP//AAABAAQAAAAEAP7/AAABAAQAAAAFAAAAAAABAAQAAAAGAAAAAAABAAQAAAAHAAAAAAABAAQAAAAIAAAAAAADAAMAAAAJAAAAAAAEAAMAAAAFAAEAAAABAAMAAAAGAAEAAAABAAMAAAAJAP//AAAFAAMAAAAJAP7/AAAFAAQAAAAAAP//AgAEAAIAAAABAP//AAABAAQAAAABAAEAAAABAAMAAAABAAIAAAAFAAAAAAACAAEAAAADAAAAAAADAAAAAAABAAQAAAACAAAAAAABAAQAAAACAP//AAABAAQAAAACAP7/AAABAAQAAAADAP7/AAABAAQAAAADAP//AAABAAQAAAADAAEAAAABAAMAAAADAAIAAAABAAQAAAAFAP7/AAABAAQAAAAGAP7/AAABAAQAAAAHAP7/AAABAAQAAAAFAP//AAABAAQAAAAGAP//AAABAAQAAAAHAP//AAABAAQAAAAIAP//AAABAAQAAAAIAP7/AAABAAQAAAAAAAQAAAABAAQAAAABAAQAAAABAAQAAAACAAQAAAABAAQAAAADAAQAAAABAAQAAAACAAUAAAABAAQAAAADAAUAAAABAAQAAAD//wUAAAAAAAIAAAAAAAYAAAABAAMAAAD//wYAAAAAAAMAAAD//wQAAAAAAAIAAAD//wMAAAAAAAIAAAD//wIAAAAAAAIAAAD//wEAAAAAAAIAAAD//wAAAAAAAAIAAAD/////AAAAAAIAAAD///7/AAAAAAIAAAABAAYAAAABAAMAAAACAAYAAAABAAMAAAADAAYAAAABAAMAAAAEAAYAAAABAAMAAAAFAAUAAAACAAIAAAAFAAQAAAACAAIAAAAFAAMAAAACAAIAAAAFAAIAAAACAAIAAAAFAAYAAAACAAIAAAAIAAEAAAABAAMAAAAJAAEAAAABAAMAAAAKAP3/AAACAAAAAAAKAP7/AAACAAIAAAAKAP//AAACAAIAAAAKAAAAAAACAAIAAAAKAAEAAAACAAIAAAD///3/AAAAAAIAAAAHAAEAAAADAAEAAAAEAAUAAAAFAAIAAAAEAAEAAgACAAAAAAAAAAIAAAAEAAAAAAD///z/AAAAAAEAAAAKAPz/AAACAAAAAAAAAAUAAAAEAAIAAAACAPz/AAAGAAAAAAACAP3/AAAGAAEAAAAAAP7/AgAEAAEAAAAHAPz/AgABAAEAAAAIAPz/AgACAAEAAAAAAAEAAgABAAMAAAADAP3/AgABAAAAAAAGAP3/AgABAAAAAAA=")
+tile_set = SubResource("TileSet_bs6rt")
 
-[node name="PlayerSpawn" parent="." unique_id=1086135284 instance=ExtResource("5_fgoix")]
+[node name="PlayerSpawn" parent="." unique_id=1923900023 instance=ExtResource("5_fgoix")]
+z_index = 2
 position = Vector2(41, 42)
 
-[node name="MirrorText" type="Node2D" parent="." unique_id=1207025468]
+[node name="LevelTransition" parent="." unique_id=1043469762 instance=ExtResource("7_0047u")]
+position = Vector2(120, 17)
+level = "uid://bodokar5axh1u"
+size = 1
+side = 3
 
-[node name="DialogInteraction" parent="MirrorText" unique_id=929728306 instance=ExtResource("7_qpcby")]
+[node name="MirrorText" type="Node2D" parent="." unique_id=1001004886]
+position = Vector2(-33, -36)
+
+[node name="DialogInteraction" parent="MirrorText" unique_id=70852569 instance=ExtResource("7_qpcby")]
 position = Vector2(73, 8)
 
-[node name="DialogText2" type="Node" parent="MirrorText/DialogInteraction" unique_id=702627789]
+[node name="DialogText" type="Node" parent="MirrorText/DialogInteraction" unique_id=1675155955]
 script = ExtResource("8_lekt1")
-text = "The fifth day."
+text = "Your mirror reflects your excitement on your face. "
 npc_info = ExtResource("9_6hhom")
 metadata/_custom_type_script = "uid://785rj1abomch"
 
-[node name="DialogText" type="Node" parent="MirrorText/DialogInteraction" unique_id=6055079]
+[node name="DialogText2" type="Node" parent="MirrorText/DialogInteraction" unique_id=161082110]
 script = ExtResource("8_lekt1")
-text = "You wish the day was already over."
+text = "A new day awaits you with endless possibilities."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="CouchText" type="Node2D" parent="." unique_id=1664682370]
+position = Vector2(-60, -24)
+
+[node name="DialogInteraction" parent="CouchText" unique_id=1059321773 instance=ExtResource("7_qpcby")]
+position = Vector2(73, 8)
+
+[node name="DialogText" type="Node" parent="CouchText/DialogInteraction" unique_id=1591777425]
+script = ExtResource("8_lekt1")
+text = "Your couch has been there for you in your roughest moments."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="CouchText/DialogInteraction" unique_id=1541916421]
+script = ExtResource("8_lekt1")
+text = "It's most comfortable when you're horribly hungover."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DeskText" type="Node2D" parent="." unique_id=454444587]
+position = Vector2(-2, 47)
+
+[node name="DialogInteraction" parent="DeskText" unique_id=583075001 instance=ExtResource("7_qpcby")]
+position = Vector2(12, 41)
+
+[node name="DialogText" type="Node" parent="DeskText/DialogInteraction" unique_id=100645279]
+script = ExtResource("8_lekt1")
+text = "Your phone waits for you, ready for a scroll through messages from friends and family."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DeskText/DialogInteraction" unique_id=1174296310]
+script = ExtResource("8_lekt1")
+text = "Your laptop lingers, unused after a long college semester."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="BedText" type="Node2D" parent="." unique_id=629629102]
+position = Vector2(2, -1)
+
+[node name="DialogInteraction" parent="BedText" unique_id=806684207 instance=ExtResource("7_qpcby")]
+position = Vector2(12, 41)
+
+[node name="DialogText" type="Node" parent="BedText/DialogInteraction" unique_id=230496615]
+script = ExtResource("8_lekt1")
+text = "Your bed is made, reflecting your readiness for the day ahead of you."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="BedText/DialogInteraction" unique_id=426176335]
+script = ExtResource("8_lekt1")
+text = "You probably won't tidy it again for another week."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="Picture1Text" type="Node2D" parent="." unique_id=1063030674]
+position = Vector2(61, -8)
+
+[node name="DialogInteraction" parent="Picture1Text" unique_id=979044438 instance=ExtResource("7_qpcby")]
+position = Vector2(12, 41)
+
+[node name="DialogText" type="Node" parent="Picture1Text/DialogInteraction" unique_id=318818086]
+script = ExtResource("8_lekt1")
+text = "A painting you made in highschool."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="Picture1Text/DialogInteraction" unique_id=823079636]
+script = ExtResource("8_lekt1")
+text = "To you, the mistakes are obvious yet charming."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="Picture2Text" type="Node2D" parent="." unique_id=853266349]
+position = Vector2(111, -72)
+
+[node name="DialogInteraction" parent="Picture2Text" unique_id=858157174 instance=ExtResource("7_qpcby")]
+position = Vector2(12, 41)
+
+[node name="DialogText" type="Node" parent="Picture2Text/DialogInteraction" unique_id=158218678]
+script = ExtResource("8_lekt1")
+text = "A housewarming gift from a friend."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="Picture2Text/DialogInteraction" unique_id=736745845]
+script = ExtResource("8_lekt1")
+text = "It reminds you of your friendship with her everyday."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="FridgeText" type="Node2D" parent="." unique_id=561968688]
+position = Vector2(125, -31)
+
+[node name="DialogInteraction" parent="FridgeText" unique_id=589457389 instance=ExtResource("7_qpcby")]
+position = Vector2(12, 41)
+
+[node name="DialogText" type="Node" parent="FridgeText/DialogInteraction" unique_id=400737757]
+script = ExtResource("8_lekt1")
+text = "Your fridge is filled with leftovers from dinner with family."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="FridgeText/DialogInteraction" unique_id=1022982460]
+script = ExtResource("8_lekt1")
+text = "You're so excited for your first day that you're not even hungry."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="PetBedText" type="Node2D" parent="." unique_id=2114941816]
+position = Vector2(59, 51)
+
+[node name="DialogInteraction" parent="PetBedText" unique_id=504926382 instance=ExtResource("7_qpcby")]
+position = Vector2(12, 41)
+
+[node name="DialogText" type="Node" parent="PetBedText/DialogInteraction" unique_id=1397309263]
+script = ExtResource("8_lekt1")
+text = "Your therapist suggested that you get a pet."
+npc_info = ExtResource("9_6hhom")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="PetBedText/DialogInteraction" unique_id=1295595797]
+script = ExtResource("8_lekt1")
+text = "For now, you only have their bed, but with this job, you can save up for more!"
 npc_info = ExtResource("9_6hhom")
 metadata/_custom_type_script = "uid://785rj1abomch"
