@@ -1,0 +1,392 @@
+[gd_scene format=3 uid="uid://c4h7poejnk5re"]
+
+[ext_resource type="Script" uid="uid://brixpvtegghto" path="res://npc/scripts/npc.gd" id="1_dsify"]
+[ext_resource type="Texture2D" uid="uid://dkpd2yrl1tvjr" path="res://npc/sprites/npc_sprite_01.png" id="2_wcerh"]
+[ext_resource type="PackedScene" uid="uid://bgkpm6i8uerqo" path="res://GUI/dialog_system/dialog_interaction.tscn" id="3_c6w0a"]
+[ext_resource type="Script" uid="uid://785rj1abomch" path="res://GUI/dialog_system/scripts/dialog_text.gd" id="4_e88a2"]
+[ext_resource type="Resource" uid="uid://duta2stsqgr2o" path="res://npc/00_npcs/hero.tres" id="5_5dwlq"]
+[ext_resource type="Resource" uid="uid://ma5i0qp2wfm" path="res://npc/00_npcs/npc_04.tres" id="6_dfbnk"]
+[ext_resource type="Script" uid="uid://bu72pcrg4ws6q" path="res://GUI/dialog_system/scripts/dialog_choice.gd" id="7_m6bgn"]
+[ext_resource type="Script" uid="uid://dhh7suegfpi4q" path="res://GUI/dialog_system/scripts/dialog_branch.gd" id="8_v2a40"]
+[ext_resource type="PackedScene" uid="uid://1p38oaxpvfg" path="res://npc/npc_behavior_patrol.tscn" id="9_pnagx"]
+[ext_resource type="PackedScene" uid="uid://daxkqata0jx5j" path="res://npc/patrol_location.tscn" id="10_cmr8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i1kj"]
+size = Vector2(16, 8)
+
+[sub_resource type="Animation" id="Animation_3i1kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nhy3c"]
+resource_name = "idle_down"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ldo70"]
+resource_name = "idle_side"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_o6cys"]
+resource_name = "idle_up"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_fnhme"]
+resource_name = "walk_down"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_ocili"]
+resource_name = "walk_side"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [22, 23, 24, 25]
+}
+
+[sub_resource type="Animation" id="Animation_uamtn"]
+resource_name = "walk_up"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [17, 18, 19, 20]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_phifv"]
+_data = {
+&"RESET": SubResource("Animation_3i1kj"),
+&"idle_down": SubResource("Animation_nhy3c"),
+&"idle_side": SubResource("Animation_ldo70"),
+&"idle_up": SubResource("Animation_o6cys"),
+&"walk_down": SubResource("Animation_fnhme"),
+&"walk_side": SubResource("Animation_ocili"),
+&"walk_up": SubResource("Animation_uamtn")
+}
+
+[node name="npc_01" type="CharacterBody2D" unique_id=1909225021]
+texture_filter = 1
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_dsify")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=356338421]
+texture_filter = 1
+position = Vector2(0, -15)
+texture = ExtResource("2_wcerh")
+hframes = 26
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1966603909]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_3i1kj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=16644141]
+libraries/ = SubResource("AnimationLibrary_phifv")
+
+[node name="DialogInteraction" parent="." unique_id=974914508 instance=ExtResource("3_c6w0a")]
+
+[node name="DialogText" type="Node" parent="DialogInteraction" unique_id=1509519335]
+script = ExtResource("4_e88a2")
+text = "Hi, how are you today?"
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction" unique_id=1330436662]
+script = ExtResource("4_e88a2")
+text = "Do you guys have any hot food here?"
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction" unique_id=1746970779]
+script = ExtResource("4_e88a2")
+text = "No, I'm sorry we don't serve anything like that."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogChoice" type="Node" parent="DialogInteraction" unique_id=1514213978]
+script = ExtResource("7_m6bgn")
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
+
+[node name="DialogBranch" type="Node" parent="DialogInteraction/DialogChoice" unique_id=54197228]
+script = ExtResource("8_v2a40")
+text = "State what drinks we have."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch" unique_id=2002822483]
+script = ExtResource("4_e88a2")
+text = "We have coffees, teas, shakes, sodas, and smoothies."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch" unique_id=1491616547]
+script = ExtResource("4_e88a2")
+text = "That's not what I asked."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogChoice" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch" unique_id=458981476]
+script = ExtResource("7_m6bgn")
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
+
+[node name="DialogBranch" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice" unique_id=462655295]
+script = ExtResource("8_v2a40")
+text = "Get defensive."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch" unique_id=305546201]
+script = ExtResource("4_e88a2")
+text = "That's all we have."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch" unique_id=120241477]
+script = ExtResource("4_e88a2")
+text = "I'm not sure we have what you're looking for otherwise."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch" unique_id=1266297713]
+script = ExtResource("4_e88a2")
+text = "Woah, I just wanted something hot."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch" unique_id=1039145905]
+script = ExtResource("4_e88a2")
+text = "If you're looking for anything other than a hot coffee or tea, there's a restaurant next door that you can go to."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch" unique_id=2024097326]
+script = ExtResource("4_e88a2")
+text = "I'm taking my service elsewhere. Unbelievable."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogBranch2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice" unique_id=1129640897]
+script = ExtResource("8_v2a40")
+text = "Become apologetic."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch2" unique_id=1267341163]
+script = ExtResource("4_e88a2")
+text = "I'm so sorry, we just don't have hot food.
+"
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch2" unique_id=1695286603]
+script = ExtResource("4_e88a2")
+text = "We have granola bars and muffins, but we don't have ovens."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch2" unique_id=2062618883]
+script = ExtResource("4_e88a2")
+text = "That's not what I wanted."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch2" unique_id=1522644611]
+script = ExtResource("4_e88a2")
+text = "This is pitiful service."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogBranch2" type="Node" parent="DialogInteraction/DialogChoice" unique_id=147581051]
+script = ExtResource("8_v2a40")
+text = "Ask for clarification."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2" unique_id=1575898437]
+script = ExtResource("4_e88a2")
+text = "I'm sorry?"
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2" unique_id=865732086]
+script = ExtResource("4_e88a2")
+text = "I said, what kind of stuff do you have here?"
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2" unique_id=1046786004]
+script = ExtResource("4_e88a2")
+text = "Oh."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2" unique_id=2040877756]
+script = ExtResource("4_e88a2")
+text = "We have cold muffins and granola bars, if that's okay. We just don't have ovens here."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2" unique_id=865750129]
+script = ExtResource("4_e88a2")
+text = "Oh, that's okay. I'll just take whatever. Please choose for me."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogChoice" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2" unique_id=1030746377]
+script = ExtResource("7_m6bgn")
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://bu72pcrg4ws6q"
+
+[node name="DialogBranch" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice" unique_id=1254164299]
+script = ExtResource("8_v2a40")
+text = "granola bar"
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch" unique_id=1200847425]
+script = ExtResource("4_e88a2")
+text = "Here's a granola bar for you."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch" unique_id=687694822]
+script = ExtResource("4_e88a2")
+text = "Thank you, this will keep me nice and energized for the road ahead."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch" unique_id=629317980]
+script = ExtResource("4_e88a2")
+text = "It's best to prepare for long trips ahead of you with something substantial."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch" unique_id=1568893123]
+script = ExtResource("4_e88a2")
+text = "Make sure to be ready."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogBranch2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice" unique_id=972789929]
+script = ExtResource("8_v2a40")
+text = "muffin"
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://dhh7suegfpi4q"
+
+[node name="DialogText" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2" unique_id=289650727]
+script = ExtResource("4_e88a2")
+text = "Here's a muffin for you."
+npc_info = ExtResource("5_5dwlq")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2" unique_id=1557126001]
+script = ExtResource("4_e88a2")
+text = "Thank you, this will keep me satisified and comfortable for the road ahead."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2" unique_id=1096293853]
+script = ExtResource("4_e88a2")
+text = "It's best to soften the day ahead of time when you're bound for a stressful time."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2" unique_id=945734385]
+script = ExtResource("4_e88a2")
+text = "Make sure to take care of yourself."
+npc_info = ExtResource("6_dfbnk")
+metadata/_custom_type_script = "uid://785rj1abomch"
+
+[node name="NpcBehaviorPatrol" parent="." unique_id=1584732215 instance=ExtResource("9_pnagx")]
+
+[node name="PatrolLocation" parent="NpcBehaviorPatrol" unique_id=663525917 instance=ExtResource("10_cmr8l")]
+modulate = Color(1, 0, 0, 1)
+
+[node name="PatrolLocation3" parent="NpcBehaviorPatrol" unique_id=1749311947 instance=ExtResource("10_cmr8l")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-43, 1)
+
+[node name="PatrolLocation2" parent="NpcBehaviorPatrol" unique_id=258753997 instance=ExtResource("10_cmr8l")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-80, 19)
+wait_time = 999.0
